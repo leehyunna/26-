@@ -7,6 +7,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        
+        /* 💡 핵심: 페이지 크기 덜컥거림 방지 (스크롤바 항상 확보) */
+        html { overflow-y: scroll; }
+
         body { font-family: 'Pretendard', sans-serif; background-color: #f9f9f9; color: #1a1a1a; }
         
         .cat-btn {
@@ -78,13 +82,10 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="project-grid">
-            
             <div class="project-card group cursor-pointer" data-category="상세페이지" onclick="location.href='project-detail.html'">
                 <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
                     <img src="images/main1.jpg" class="w-full h-full object-cover">
-                    <div class="overlay">
-                        <span class="view-btn">프로젝트 보기</span>
-                    </div>
+                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
                 </div>
                 <h4 class="font-bold text-lg mb-1 text-left">바닐라슈 (VanillaShoes)</h4>
                 <p class="text-xs text-gray-600 mb-2 uppercase font-bold text-left">사용툴 Photoshop, Figma</p>
@@ -94,9 +95,7 @@
             <div class="project-card group cursor-pointer" data-category="브랜딩" onclick="location.href='project-detail-branding.html'">
                 <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
                     <img src="images/main2.jpg" class="w-full h-full object-cover">
-                    <div class="overlay">
-                        <span class="view-btn">프로젝트 보기</span>
-                    </div>
+                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
                 </div>
                 <h4 class="font-bold text-lg mb-1 text-left">브랜드 리뉴얼</h4>
                 <p class="text-xs text-gray-600 mb-2 uppercase font-bold text-left">사용툴 Illustrator, Photoshop</p>
@@ -106,40 +105,35 @@
             <div class="project-card group cursor-pointer" data-category="브랜딩" onclick="location.href='project-detail-branding.html'">
                 <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
                     <img src="images/main3.jpg" class="w-full h-full object-cover">
-                    <div class="overlay">
-                        <span class="view-btn">프로젝트 보기</span>
-                    </div>
+                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
                 </div>
                 <h4 class="font-bold text-lg mb-1 text-left">로고 디자인</h4>
                 <p class="text-xs text-gray-600 mb-2 uppercase font-bold text-left">사용툴 Illustrator</p>
                 <p class="text-sm text-gray-500 text-left">CI/BI 디자인</p>
             </div>
-
         </div>
     </main>
 
     <footer class="bg-white pt-24 pb-12 px-6 md:px-12 border-t border-gray-100 w-full shrink-0">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 text-left">
-        <div class="max-w-sm">
-            <h4 class="font-bold text-lg mb-4 text-left">Hyunna Lee</h4>
-            <p class="text-sm text-gray-500 leading-relaxed text-left">
-                브랜드와 커머스를 연결하는 사려 깊은 디자인 경험을 제공합니다.
-            </p>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 text-left">
+            <div class="max-w-sm">
+                <h4 class="font-bold text-lg mb-4 text-left">Hyunna Lee</h4>
+                <p class="text-sm text-gray-500 leading-relaxed text-left">브랜드와 커머스를 연결하는 사려 깊은 디자인 경험을 제공합니다.</p>
+            </div>
+            <div class="flex gap-24">
+                <div class="text-left">
+                    <h5 class="text-[11px] font-bold text-gray-400 uppercase mb-6 tracking-[0.2em]">소셜</h5>
+                    <ul class="text-[13px] space-y-3 font-medium">
+                        <li><a href="#" class="hover:underline flex items-center gap-2">인스타그램</a></li>
+                        <li><a href="mailto:gs9266123@gmail.com" class="hover:underline flex items-center gap-2">이메일</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="flex gap-24">
-            <div class="text-left">
-                <h5 class="text-[11px] font-bold text-gray-400 uppercase mb-6 tracking-[0.2em]">소셜</h5>
-                <ul class="text-[13px] space-y-3 font-medium">
-                    <li><a href="#" class="hover:underline flex items-center gap-2">인스타그램</a></li>
-                    <li><a href="mailto:gs9266123@gmail.com" class="hover:underline flex items-center gap-2">이메일</a></li>
-                </ul>
-            </div>
-            </div>
-    </div>
-    <div class="max-w-7xl mx-auto mt-24 text-[10px] text-gray-400 uppercase tracking-widest text-left">
-        © 2026 Hyunna Lee. All rights reserved.
-    </div>
-</footer>
+        <div class="max-w-7xl mx-auto mt-24 text-[10px] text-gray-400 uppercase tracking-widest text-left">
+            © 2026 Hyunna Lee. All rights reserved.
+        </div>
+    </footer>
 
     <script>
         function filterProjects(category) {
