@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEE HYUN NA | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            word-break: keep-all;
+            background-color: #fff;
+            color: #1a1a1a;
+        }
+
+        .tight-tracking { letter-spacing: -0.05em; }
+        .nav-item { font-size: 13px; color: #666; transition: 0.3s; }
+        .nav-item:hover { color: #000; }
+        
+        .btn-black {
+            background: #111;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            transition: 0.3s;
+        }
+        .btn-black:hover { background: #333; transform: translateY(-2px); }
+
+        /* 프로젝트 호버 시 오버레이 효과 */
+        .project-card .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: 0.3s;
+            backdrop-filter: blur(4px);
+        }
+        .project-card:hover .overlay { opacity: 1; }
+        
+        .view-btn {
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto">
+    <div class="font-bold text-lg tracking-tighter uppercase cursor-pointer" onclick="location.href='index.html'">
+        LEE HYUN NA
+    </div>
+    
+    <div class="hidden md:flex space-x-8">
+        <a href="index.html" class="nav-item">홈</a>
+        <a href="about.html" class="nav-item">소개</a>
+        <a href="portfolio.html" class="nav-item">포트폴리오</a>
+        <a href="skills.html" class="nav-item">skills</a>
+        <a href="contact.html" class="nav-item">연락처</a>
+    </div>
+</nav>
+
+    <header class="max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-32">
+        <h1 class="text-5xl md:text-7xl font-bold tight-tracking mb-8 leading-[1.15]">
+            브랜드 경험을 디자인합니다<br>
+            <span class="text-gray-400">웹 & 커머스 전반에 걸쳐</span>
+        </h1>
+        <p class="text-gray-500 text-lg md:text-xl mb-12 max-w-2xl leading-relaxed">
+            이현나 — 브랜드, 비주얼, 디지털 경험을 전문으로 하는 8년 경력의 이커머스 디자이너입니다.
+        </p>
+        <a href="portfolio.html" class="btn-black">
+            포트폴리오 보기 <span class="ml-2">→</span>
+        </a>
+    </header>
+
+    <section id="portfolio" class="max-w-7xl mx-auto px-6 md:px-12 pb-32">
+        <div class="flex justify-between items-end mb-12">
+            <h3 class="text-2xl font-bold">주요 프로젝트</h3>
+            <a href="portfolio.html" class="text-sm text-gray-400 hover:text-black transition-colors">전체 보기 →</a>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            <div class="project-card group cursor-pointer" onclick="location.href='project-detail.html'">
+                <div class="relative aspect-[16/10] overflow-hidden rounded-2xl bg-gray-100 mb-6">
+                    <img src="images/main1.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="프로젝트1">
+                    <div class="overlay">
+                        <span class="view-btn">프로젝트 보기</span>
+                    </div>
+                </div>
+                <h4 class="text-xl font-bold mb-1 text-black">바닐라슈 (VanillaShoes)</h4>
+                <p class="text-xs text-gray-600 mb-2 uppercase font-bold">사용툴 Photoshop, Figma</p>
+                <p class="text-sm text-gray-500">상세페이지 디자인</p>
+            </div>
+
+            <div class="project-card group cursor-pointer" onclick="location.href='project-detail.html'">
+                <div class="relative aspect-[16/10] overflow-hidden rounded-2xl bg-gray-100 mb-6">
+                    <img src="images/main2.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="프로젝트2">
+                    <div class="overlay">
+                        <span class="view-btn">프로젝트 보기</span>
+                    </div>
+                </div>
+                <h4 class="text-xl font-bold mb-1 text-black">브랜드 리뉴얼</h4>
+                <p class="text-xs text-gray-600 mb-2 uppercase font-bold">사용툴 Illustrator, Photoshop</p>
+                <p class="text-sm text-gray-500">브랜딩</p>
+            </div>
+
+            <div class="project-card group cursor-pointer" onclick="location.href='project-detail.html'">
+                <div class="relative aspect-[16/10] overflow-hidden rounded-2xl bg-gray-100 mb-6">
+                    <img src="images/main3.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="프로젝트3">
+                    <div class="overlay">
+                        <span class="view-btn">프로젝트 보기</span>
+                    </div>
+                </div>
+                <h4 class="text-xl font-bold mb-1 text-black">로고 디자인</h4>
+                <p class="text-xs text-gray-600 mb-2 uppercase font-bold">사용툴 Illustrator</p>
+                <p class="text-sm text-gray-500">CI/BI 디자인</p>
+            </div>
+
+            <div class="project-card group cursor-pointer" onclick="location.href='project-detail.html'">
+                <div class="relative aspect-[16/10] overflow-hidden rounded-2xl bg-gray-100 mb-6">
+                    <img src="images/main4.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="프로젝트4">
+                    <div class="overlay">
+                        <span class="view-btn">프로젝트 보기</span>
+                    </div>
+                </div>
+                <h4 class="text-xl font-bold mb-1 text-black">UXUI 대시보드</h4>
+                <p class="text-xs text-gray-600 mb-2 uppercase font-bold">사용툴 Figma</p>
+                <p class="text-sm text-gray-500">웹 디자인</p>
+            </div>
+
+            <div class="project-card group cursor-pointer" onclick="location.href='project-detail.html'">
+                <div class="relative aspect-[16/10] overflow-hidden rounded-2xl bg-gray-100 mb-6">
+                    <img src="images/main5.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="프로젝트5">
+                    <div class="overlay">
+                        <span class="view-btn">프로젝트 보기</span>
+                    </div>
+                </div>
+                <h4 class="text-xl font-bold mb-1 text-black">프로모션 배너</h4>
+                <p class="text-xs text-gray-600 mb-2 uppercase font-bold">사용툴 Photoshop</p>
+                <p class="text-sm text-gray-500">배너 디자인</p>
+            </div>
+
+            <div class="project-card group cursor-pointer" onclick="location.href='project-detail.html'">
+                <div class="relative aspect-[16/10] overflow-hidden rounded-2xl bg-gray-100 mb-6">
+                    <img src="images/main6.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="프로젝트6">
+                    <div class="overlay">
+                        <span class="view-btn">프로젝트 보기</span>
+                    </div>
+                </div>
+                <h4 class="text-xl font-bold mb-1 text-black">AI 아트워크</h4>
+                <p class="text-xs text-gray-600 mb-2 uppercase font-bold">사용툴 Midjourney</p>
+                <p class="text-sm text-gray-500">AI 비주얼</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#111] text-white py-24 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-6">8년의 이커머스 전문성</h2>
+                <p class="text-gray-400 leading-relaxed text-lg">
+                    브랜드 아이덴티티부터 높은 전환율의 상세 페이지까지, 결과를<br class="hidden md:block">
+                    이끌어내는 비주얼 솔루션을 제공합니다.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-y-12 gap-x-8">
+                <div>
+                    <h5 class="font-bold text-lg mb-2">웹 디자인</h5>
+                    <p class="text-sm text-gray-500 uppercase">반응형 & 모바일</p>
+                </div>
+                <div>
+                    <h5 class="font-bold text-lg mb-2">브랜드 아이덴티티</h5>
+                    <p class="text-sm text-gray-500 uppercase">일관된 비주얼</p>
+                </div>
+                <div>
+                    <h5 class="font-bold text-lg mb-2">이커머스</h5>
+                    <p class="text-sm text-gray-500 uppercase">전환 최적화</p>
+                </div>
+                <div>
+                    <h5 class="font-bold text-lg mb-2">AI 비주얼</h5>
+                    <p class="text-sm text-gray-500 uppercase">효율적인 생산</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white pt-24 pb-12 px-6 md:px-12 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 text-left">
+            <div class="max-w-sm">
+                <h4 class="font-bold text-lg mb-4">Hyunna Lee</h4>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    브랜드와 커머스를 연결하는 사려 깊은 디자인 경험을 제공합니다.
+                </p>
+            </div>
+            <div class="flex gap-24">
+                <div>
+                    <h5 class="text-[11px] font-bold text-gray-400 uppercase mb-6 tracking-[0.2em]">소셜</h5>
+                    <ul class="text-[13px] space-y-3 font-medium">
+                        <li><a href="#" class="hover:underline flex items-center gap-2">인스타그램</a></li>
+                        <li><a href="mailto:gs9266123@gmail.com" class="hover:underline flex items-center gap-2">이메일</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-[11px] font-bold text-gray-400 uppercase mb-6 tracking-[0.2em]">관리자</h5>
+                    <ul class="text-[13px] space-y-3 font-medium">
+                        <li><a href="admin.html" class="hover:underline">프로젝트 관리</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-24 text-[10px] text-gray-400 uppercase tracking-widest text-left">
+            © 2026 Hyunna Lee. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
