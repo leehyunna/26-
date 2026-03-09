@@ -8,10 +8,16 @@
     <style>
         @import url('https://fonts.googleapis.com/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
         
-        /* 💡 핵심: 페이지 크기 덜컥거림 방지 (스크롤바 항상 확보) */
+        /* 💡 핵심: 카테고리 클릭 시 게시물이 줄어도 우측 스크롤바 자리를 고정해 덜컥거림 방지 */
         html { overflow-y: scroll; }
 
-        body { font-family: 'Pretendard', sans-serif; background-color: #f9f9f9; color: #1a1a1a; }
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            background-color: #f9f9f9; 
+            color: #1a1a1a;
+            /* 페이지 높이가 짧아져도 스크롤바 형태를 유지하도록 보정 */
+            min-height: 101vh; 
+        }
         
         .cat-btn {
             padding: 10px 24px;
@@ -82,6 +88,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="project-grid">
+            
             <div class="project-card group cursor-pointer" data-category="상세페이지" onclick="location.href='project-detail.html'">
                 <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
                     <img src="images/main1.jpg" class="w-full h-full object-cover">
@@ -108,9 +115,10 @@
                     <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
                 </div>
                 <h4 class="font-bold text-lg mb-1 text-left">로고 디자인</h4>
-                <p class="text-xs text-gray-600 mb-2 uppercase font-bold text-left">사용툴 Illustrator</p>
+                <p class="text-xs text-gray-400 mb-2 uppercase font-bold text-left">사용툴 Illustrator</p>
                 <p class="text-sm text-gray-500 text-left">CI/BI 디자인</p>
             </div>
+
         </div>
     </main>
 
@@ -118,7 +126,9 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 text-left">
             <div class="max-w-sm">
                 <h4 class="font-bold text-lg mb-4 text-left">Hyunna Lee</h4>
-                <p class="text-sm text-gray-500 leading-relaxed text-left">브랜드와 커머스를 연결하는 사려 깊은 디자인 경험을 제공합니다.</p>
+                <p class="text-sm text-gray-500 leading-relaxed text-left">
+                    브랜드와 커머스를 연결하는 사려 깊은 디자인 경험을 제공합니다.
+                </p>
             </div>
             <div class="flex gap-24">
                 <div class="text-left">
@@ -139,7 +149,10 @@
         function filterProjects(category) {
             const btns = document.querySelectorAll('.cat-btn');
             btns.forEach(btn => btn.classList.remove('active'));
-            event.currentTarget.classList.add('active');
+            // 이벤트가 발생한 요소를 정확히 찾아 클래스 추가
+            if (event) {
+                event.currentTarget.classList.add('active');
+            }
 
             const cards = document.querySelectorAll('.project-card');
             cards.forEach(card => {
