@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | LEE HYUN NA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body { font-family: 'Pretendard', sans-serif; background-color: #fff; color: #1a1a1a; word-break: keep-all; }
+        .nav-item { font-size: 13px; color: #666; transition: 0.3s; }
+        .nav-item:hover { color: #000; }
+        
+        /* 스킬 칩 스타일 */
+        .skill-chip {
+            background: #f9f9f9;
+            border: 1px solid #efefef;
+            padding: 12px 0;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #444;
+            text-align: center;
+            transition: 0.2s;
+        }
+        .skill-chip:hover { background: #f0f0f0; }
+    </style>
+</head>
+<body>
+
+<nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto">
+    <div class="font-bold text-lg tracking-tighter uppercase cursor-pointer" onclick="location.href='index.html'">
+        LEE HYUN NA
+    </div>
+    
+    <div class="hidden md:flex space-x-8">
+        <a href="index.html" class="nav-item">홈</a>
+        <a href="about.html" class="nav-item">소개</a>
+        <a href="portfolio.html" class="nav-item">포트폴리오</a>
+        <a href="skills.html" class="nav-item">skills</a>
+        <a href="contact.html" class="nav-item">연락처</a>
+    </div>
+</nav>
+    <section class="max-w-7xl mx-auto px-6 md:px-12 pt-16 pb-32 flex flex-col md:flex-row justify-between items-start gap-16">
+        <div class="md:w-1/2">
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-10">
+                브랜드와 커머스를<br>연결합니다
+            </h1>
+            <div class="text-gray-500 text-base md:text-lg leading-relaxed space-y-4 max-w-lg">
+                <p>안녕하세요. 브랜드와 커머스를 연결하는 디자이너 이현나입니다.</p>
+                <p>8년간 이커머스 디자인 실무 경험을 통해 상품 페이지, 브랜드 비주얼, 콘텐츠 디자인을 제작해왔습니다.</p>
+                <p>단순히 예쁜 디자인을 넘어, 브랜드의 가치를 전달하고 실제 구매로 이어지는 사용자 경험을 설계합니다.</p>
+            </div>
+        </div>
+        <div class="md:w-1/2 w-full">
+            <div class="rounded-3xl overflow-hidden aspect-[4/5] bg-gray-100">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80" 
+                     alt="소개 이미지" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 md:px-12 pb-32 grid md:grid-cols-2 gap-20">
+        
+        <div>
+            <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-10">경력</h3>
+            <div class="flex justify-between items-start">
+                <div>
+                    <h4 class="text-xl font-bold mb-2">VanillaSho</h4>
+                    <p class="text-sm text-gray-400 mb-6">이커머스 디자인 팀</p>
+                    <ul class="text-sm text-gray-500 space-y-2 leading-relaxed">
+                        <li>• 상세페이지 디자인 및 UX 최적화</li>
+                        <li>• 시즌 캠페인 비주얼 및 배너 디자인</li>
+                        <li>• SNS 콘텐츠 제작 및 마케팅 비주얼</li>
+                        <li>• Cafe24 사이트 운영 및 유지보수</li>
+                    </ul>
+                </div>
+                <div class="text-sm text-gray-400 font-medium">2017 — 2025</div>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-10">Skills</h3>
+            <div class="grid grid-cols-2 gap-3">
+                <div class="skill-chip">Photoshop</div>
+                <div class="skill-chip">Illustrator</div>
+                <div class="skill-chip">Figma</div>
+                <div class="skill-chip">Canva</div>
+                <div class="skill-chip">Freepik</div>
+                <div class="skill-chip">CapCut</div>
+                <div class="skill-chip">Excel</div>
+                <div class="skill-chip">Gemini</div>
+                <div class="skill-chip">ChatGPT</div>
+                <div class="skill-chip">HTML/CSS</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white pt-24 pb-12 px-6 md:px-12 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
+            <div class="max-w-sm">
+                <h4 class="font-bold text-lg mb-4">Hyunna Lee</h4>
+                <p class="text-sm text-gray-500 leading-relaxed">브랜드와 커머스를 연결하는 사려 깊은 디자인 경험을 제공합니다.</p>
+            </div>
+            <div class="flex gap-24">
+                <div>
+                    <h5 class="text-[11px] font-bold text-gray-400 uppercase mb-6 tracking-[0.2em]">소셜</h5>
+                    <ul class="text-[13px] space-y-3 font-medium">
+                        <li><a href="#" class="hover:underline">인스타그램</a></li>
+                        <li><a href="#" class="hover:underline">이메일</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-[11px] font-bold text-gray-400 uppercase mb-6 tracking-[0.2em]">관리자</h5>
+                    <ul class="text-[13px] space-y-3 font-medium">
+                        <li><a href="admin.html" class="hover:underline">프로젝트 관리</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-24 text-[10px] text-gray-400 uppercase tracking-widest">
+            © 2026 Hyunna Lee. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
