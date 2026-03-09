@@ -8,15 +8,19 @@
     <style>
         @import url('https://fonts.googleapis.com/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
         
-        /* 💡 핵심: 카테고리 클릭 시 게시물이 줄어도 우측 스크롤바 자리를 고정해 덜컥거림 방지 */
-        html { overflow-y: scroll; }
+        /* 💡 해결책 1: 스크롤바 자리를 항상 확보하여 레이아웃 밀림 방지 */
+        html { 
+            overflow-y: scroll; 
+        }
 
         body { 
             font-family: 'Pretendard', sans-serif; 
             background-color: #f9f9f9; 
             color: #1a1a1a;
-            /* 페이지 높이가 짧아져도 스크롤바 형태를 유지하도록 보정 */
+            /* 높이가 짧아져도 스크롤바가 유지되도록 강제 */
             min-height: 101vh; 
+            /* 가로 스크롤바 발생 방지 */
+            overflow-x: hidden; 
         }
         
         .cat-btn {
@@ -72,20 +76,22 @@
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto px-6 md:px-12 pt-16 pb-32 flex-grow">
+    <main class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-16 pb-32 flex-grow">
         <h1 class="text-4xl font-bold mb-12 text-left">포트폴리오</h1>
 
-        <div class="flex flex-wrap gap-3 mb-16" id="category-container">
-            <button class="cat-btn active" onclick="filterProjects('all')">전체</button>
-            <button class="cat-btn" onclick="filterProjects('웹디자인')">웹디자인</button>
-            <button class="cat-btn" onclick="filterProjects('브랜딩')">브랜딩</button>
-            <button class="cat-btn" onclick="filterProjects('상세페이지')">상세페이지</button>
-            <button class="cat-btn" onclick="filterProjects('배너')">배너</button>
-            <button class="cat-btn" onclick="filterProjects('UX/UI')">UX/UI</button>
-            <button class="cat-btn" onclick="filterProjects('영상')">영상</button>
-            <button class="cat-btn" onclick="filterProjects('AI비주얼')">AI비주얼</button>
-            <button class="cat-btn" onclick="filterProjects('콘텐츠')">콘텐츠</button>
-        </div>
+     <div class="flex flex-wrap justify-center gap-3 mb-16" id="category-container">
+    <button class="cat-btn active" onclick="filterProjects('all')">전체</button>
+    <button class="cat-btn" onclick="filterProjects('웹디자인')">웹디자인</button>
+    <button class="cat-btn" onclick="filterProjects('브랜딩')">브랜딩</button>
+    <button class="cat-btn" onclick="filterProjects('상세페이지')">상세페이지</button>
+    <button class="cat-btn" onclick="filterProjects('배너')">배너</button>
+    <button class="cat-btn" onclick="filterProjects('영상')">영상</button>
+    <button class="cat-btn" onclick="filterProjects('로고디자인')">로고디자인</button>
+    <button class="cat-btn" onclick="filterProjects('UX/UI')">UX/UI</button>
+
+    <button class="cat-btn" onclick="filterProjects('AI비주얼')">AI비주얼</button>
+    <button class="cat-btn" onclick="filterProjects('콘텐츠')">콘텐츠</button>
+</div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="project-grid">
             
@@ -109,7 +115,7 @@
                 <p class="text-sm text-gray-500 text-left">브랜딩</p>
             </div>
 
-            <div class="project-card group cursor-pointer" data-category="브랜딩" onclick="location.href='project-detail-branding.html'">
+            <div class="project-card group cursor-pointer" data-category="로고디자인" onclick="location.href='roject-detail-logo_The Care Plus.html'">
                 <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
                     <img src="images/main3.jpg" class="w-full h-full object-cover">
                     <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
@@ -149,7 +155,6 @@
         function filterProjects(category) {
             const btns = document.querySelectorAll('.cat-btn');
             btns.forEach(btn => btn.classList.remove('active'));
-            // 이벤트가 발생한 요소를 정확히 찾아 클래스 추가
             if (event) {
                 event.currentTarget.classList.add('active');
             }
