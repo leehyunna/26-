@@ -1,27 +1,97 @@
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="project-grid">
-    
-    <div class="project-card group cursor-pointer" data-category="detail" onclick="location.href='project-detail.html'">
-        <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800" class="w-full h-full object-cover">
-            <div class="overlay">
-                <span class="view-btn">프로젝트 보기</span>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branding Detail | LEE HYUN NA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body { font-family: 'Pretendard', sans-serif; background-color: #f9f9f9; color: #1a1a1a; }
+        .tag { background: #eee; padding: 4px 12px; border-radius: 4px; font-size: 11px; color: #666; font-weight: 600; }
+        .content-media { width: 100%; border-radius: 24px; overflow: hidden; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto w-full">
+        <div class="font-bold text-lg uppercase cursor-pointer" onclick="location.href='index.html'">LEE HYUN NA</div>
+        <div class="space-x-8 text-xs text-gray-400 uppercase tracking-widest">
+            <a href="portfolio.html" class="hover:text-black transition-colors">Close Project ✕</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-20 flex-grow">
+        <p class="text-xs text-gray-400 mb-4 text-left">브랜딩</p>
+        <div class="flex justify-between items-end mb-12">
+            <h1 class="text-4xl font-bold text-left">브랜드 리뉴얼</h1>
+            <div class="flex gap-2">
+                <span class="tag">Illustrator</span>
+                <span class="tag">Photoshop</span>
             </div>
         </div>
-        <h4 class="font-bold text-lg mb-1">바닐라슈 (VanillaShoes)</h4>
-        <p class="text-xs text-gray-600 mb-2 uppercase font-bold">사용툴 Photoshop, Figma</p>
-        <p class="text-sm text-gray-500">상세페이지</p>
-    </div>
 
-    <div class="project-card group cursor-pointer" data-category="branding" onclick="location.href='project-detail.html'">
-        <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800" class="w-full h-full object-cover">
-            <div class="overlay">
-                <span class="view-btn">프로젝트 보기</span>
+        <h3 class="font-bold mb-8 border-b pb-4 text-left">프로젝트 정보</h3>
+        <div class="grid grid-cols-5 gap-4 mb-20 text-center">
+            <div><p class="text-[10px] text-gray-400 mb-2">역할</p><p class="text-xs font-bold">리브랜딩 / 로고</p></div>
+            <div><p class="text-[10px] text-gray-400 mb-2">연도</p><p class="text-xs font-bold">2024</p></div>
+            <div><p class="text-[10px] text-gray-400 mb-2">유형</p><p class="text-xs font-bold">Identity</p></div>
+            <div><p class="text-[10px] text-gray-400 mb-2">분야</p><p class="text-xs font-bold">커머스</p></div>
+            <div><p class="text-[10px] text-gray-400 mb-2">기여도</p><p class="text-xs font-bold">100%</p></div>
+        </div>
+
+        <div class="content-media">
+            <img src="images/main2.jpg" alt="브랜드 리뉴얼 대표 이미지" class="w-full h-full object-cover">
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">01</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">디자인 컨셉</h4>
+                <p class="text-gray-500 text-sm leading-relaxed mb-10">
+                    기존 브랜드가 가진 올드한 이미지를 탈피하고, 미니멀하면서도 감각적인 비주얼 아이덴티티를 구축했습니다. 
+                    브랜드의 핵심 가치를 담은 새로운 로고 시스템과 컬러 가이드를 제안합니다.
+                </p>
+                <div class="space-y-6">
+                    <img src="images/branding_work1.jpg" alt="브랜딩 작업물1" class="content-media">
+                </div>
             </div>
         </div>
-        <h4 class="font-bold text-lg mb-1">브랜드 리뉴얼</h4>
-        <p class="text-xs text-gray-600 mb-2 uppercase font-bold">사용툴 Illustrator</p>
-        <p class="text-sm text-gray-500">브랜딩</p>
-    </div>
 
-</div>
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">02</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">브랜드 어플리케이션</h4>
+                <p class="text-gray-500 text-sm leading-relaxed mb-10">
+                    패키지 디자인부터 웹 사이트 파비콘까지 일관된 무드를 유지하여 브랜드 신뢰도를 높였습니다.
+                </p>
+                <div class="space-y-6">
+                    <img src="images/branding_work2.jpg" alt="브랜딩 작업물2" class="content-media">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white pt-24 pb-12 px-6 md:px-12 border-t border-gray-100 w-full shrink-0">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 text-left">
+            <div class="max-w-sm">
+                <h4 class="font-bold text-lg mb-4">Hyunna Lee</h4>
+                <p class="text-sm text-gray-500 leading-relaxed">브랜드와 커머스를 연결하는 사려 깊은 디자인 경험을 제공합니다.</p>
+            </div>
+            <div class="flex gap-24">
+                <div class="text-left">
+                    <h5 class="text-[11px] font-bold text-gray-400 uppercase mb-6 tracking-[0.2em]">소셜</h5>
+                    <ul class="text-[13px] space-y-3 font-medium">
+                        <li><a href="#" class="hover:underline flex items-center gap-2">인스타그램</a></li>
+                        <li><a href="mailto:gs9266123@gmail.com" class="hover:underline flex items-center gap-2">이메일</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-24 text-[10px] text-gray-400 uppercase tracking-widest text-left">
+            © 2026 Hyunna Lee. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
