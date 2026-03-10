@@ -9,13 +9,22 @@
         @import url('https://fonts.googleapis.com/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
         body { font-family: 'Pretendard', sans-serif; background-color: #f9f9f9; color: #1a1a1a; }
         .tag { background: #eee; padding: 4px 12px; border-radius: 4px; font-size: 11px; color: #666; font-weight: 600; }
-        /* 이미지 간격 및 둥근 모서리 공통 스타일 */
         .content-media { width: 100%; border-radius: 24px; overflow: hidden; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        
+        /* 💡 줄바꿈을 위한 스타일: 엔터 친 대로 화면에 표시됩니다 */
+        .desc-text { 
+            white-space: pre-wrap; 
+            word-break: keep-all; 
+        }
+
+        /* 덜컥거림 방지 */
+        html { overflow-y: scroll; }
+        body { min-height: 101vh; }
     </style>
 </head>
 <body>
 
-    <nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto">
+    <nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto w-full">
         <div class="font-bold text-lg uppercase cursor-pointer" onclick="location.href='index.html'">LEE HYUN NA</div>
         <div class="space-x-8 text-xs text-gray-400 uppercase tracking-widest">
             <a href="portfolio.html">Close Project ✕</a>
@@ -23,44 +32,56 @@
     </nav>
 
     <main class="max-w-4xl mx-auto px-6 py-20">
-        <p class="text-xs text-gray-400 mb-4 text-left">상세페이지</p>
+        <p class="text-sm text-gray-600 font-bold mb-4 text-left">브랜딩 / 비주얼콘텐츠 / 영상</p>
+        
         <div class="flex justify-between items-end mb-12">
-            <h1 class="text-4xl font-bold">바닐라슈 (VanillaShoes)</h1>
+            <h1 class="text-4xl font-bold text-left">오설록</h1>
             <div class="flex gap-2">
-                <span class="tag">Photoshop</span>
                 <span class="tag">Figma</span>
+                <span class="tag">CapCut</span>
+                <span class="tag">Freepik</span>
+		<span class="tag">Midjourney</span>
+		<span class="tag">Photoshop</span>
+		<span class="tag">Whisk</span>
             </div>
         </div>
 
         <h3 class="font-bold mb-8 border-b pb-4 text-left">프로젝트 정보</h3>
         <div class="grid grid-cols-5 gap-4 mb-20 text-center">
-            <div><p class="text-[10px] text-gray-400 mb-2">역할</p><p class="text-xs font-bold">비주얼 디자인 / UX</p></div>
-            <div><p class="text-[10px] text-gray-400 mb-2">연도</p><p class="text-xs font-bold">2024</p></div>
-            <div><p class="text-[10px] text-gray-400 mb-2">유형</p><p class="text-xs font-bold">가나다</p></div>
-            <div><p class="text-[10px] text-gray-400 mb-2">분야</p><p class="text-xs font-bold">가나다</p></div>
-            <div><p class="text-[10px] text-gray-400 mb-2">기여도</p><p class="text-xs font-bold">가나다</p></div>
-        </div>
-
-        <div class="content-media bg-gray-200">
-            <video class="w-full" controls autoplay muted loop>
-                <source src="videos/my-project.mp4" type="video/mp4">
-                브라우저가 비디오 태그를 지원하지 않습니다.
-            </video>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">역할</p>
+                <p class="text-xs font-bold text-gray-600">AI 이미지 생성 및 브랜드 컨셉 영상 기획·제작</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">연도</p>
+                <p class="text-xs font-bold text-gray-600">2026</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">유형</p>
+                <p class="text-xs font-bold text-gray-600">개인프로젝트</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">분야</p>
+                <p class="text-xs font-bold text-gray-600">브랜딩, 비주얼 콘텐츠, 영상</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">기여도</p>
+                <p class="text-xs font-bold text-gray-600">100%</p>
+            </div>
         </div>
 
         <div class="py-12 border-t flex items-start gap-6">
             <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">01</span>
             <div class="flex-1 text-left">
                 <h4 class="font-bold mb-4">프로젝트 개요</h4>
-                <p class="text-gray-500 text-sm leading-relaxed mb-10">
-                    프리미엄 슈즈 브랜드를 위한 이커머스 비주얼 디자인입니다. 
-                    사용자의 구매 욕구를 자극하는 감성적인 무드와 깔끔한 레이아웃을 중점적으로 작업했습니다.
-                </p>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">기존 오설록의 자연·청정 이미지를 유지하면서도,
+보다 현대적이고 세련된 프리미엄 무드로 확장하기 위한 브랜드 리프레시 프로젝트입니다.
 
-                <div class="space-y-6">
-                    <img src="images/detail1.jpg" alt="작업물1" class="content-media">
-                    <img src="images/detail2.jpg" alt="작업물2" class="content-media">
-                </div>
+‘숨, 제주를 마시다’라는 슬로건을 중심으로
+제주의 안개, 흙, 어린 찻잎의 생명력을 시네마틱 영상 언어로 재해석했습니다.
+
+★AI 기반 비주얼 프로덕션을 활용하여 이미지 생성부터 영상 연출, 사운드 구성, 카피라이팅까지
+   브랜드 감성 전반을 직접 기획·디렉팅했습니다.★</p>
             </div>
         </div>
 
@@ -68,65 +89,87 @@
             <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">02</span>
             <div class="flex-1 text-left">
                 <h4 class="font-bold mb-4">프로젝트 완성</h4>
-                <p class="text-gray-500 text-sm leading-relaxed mb-10">
-                    최종 결과물입니다. 모바일 환경에서도 최적화된 비주얼을 제공하며 브랜드 아이덴티티를 유지했습니다.
-                </p>
-
                 <div class="space-y-6">
-                    <img src="images/detail_final.jpg" alt="결과물1" class="content-media">
+<video class="content-media w-full" controls autoplay muted loop>
+    <source src="videos/branding_work_1_4.mp4" type="video/mp4">
+    브라우저가 비디오를 지원하지 않습니다.
+</video>
+                    <img src="images/branding_work_1_1.jpg" alt="결과물1" class="content-media">
+                    <img src="images/branding_work_1_2.jpg" alt="결과물2" class="content-media">
+                    <img src="images/branding_work_1_3.jpg" alt="결과물3" class="content-media">
                 </div>
             </div>
         </div>
 
-      <div class="py-12 border-t flex items-start gap-6">
+        <div class="py-12 border-t flex items-start gap-6">
             <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">03</span>
             <div class="flex-1 text-left">
                 <h4 class="font-bold mb-4">주요작업</h4>
-                <p class="text-gray-500 text-sm leading-relaxed mb-10">
-                    최종 결과물입니다. 모바일 환경에서도 최적화된 비주얼을 제공하며 브랜드 아이덴티티를 유지했습니다.
-                </p>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">작업 설명
 
-                <div class="space-y-6">
-                    <img src="images/detail_final.jpg" alt="결과물1" class="content-media">
+1. 브랜드 컨셉 기획
+
+- ‘숨, 제주를 마시다’ 슬로건 도출
+- 자연·안개·한지 질감을 모티브로 무드 방향 설정
+- 브랜드 리프레시 콘셉트 정의
+
+2. AI 이미지 디렉팅
+
+- 미드저니&프리픽 기반 자연/제품 비주얼 생성
+- 한지 배경 및 질감 커스터마이징
+- 제품 합성 및 비율 조정
+
+3. 영상 연출 및 무빙 설계
+
+- 카메라 슬라이드 무빙 설계
+- 슬로우 모션 컷 구성
+- 자연광 및 연기 효과 연출 디렉팅
+
+4. 편집 및 사운드 구성
+
+- CapCut 기반 컷 편집
+- 자연 바람/환경음 중심의 사운드 설계
+- 브랜드 톤에 맞춘 영상 리듬 구성
+
+5. 전체 비주얼 브랜딩 정리
+
+- 타이포그래피 구성
+- 컬러 톤 보정
+- 프리미엄 무드 일관성 유지</p>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">05</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">인사이트</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed">AI 기반 제작 방식은 빠른 시각화와 다양한 무드 테스트에 효과적이었으며,
+
+브랜드 톤을 유지하면서도 새로운 비주얼 방향을 실험할 수 있는 가능성을 확인했습니다.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white pt-24 pb-12 px-6 md:px-12 border-t border-gray-100 w-full shrink-0">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 text-left">
+            <div class="max-w-sm">
+                <h4 class="font-bold text-lg mb-4 text-left">Hyunna Lee</h4>
+                <p class="text-sm text-gray-500 leading-relaxed text-left">브랜드와 커머스를 연결하는 사려 깊은 디자인 경험을 제공합니다.</p>
+            </div>
+            <div class="flex gap-24">
+                <div class="text-left">
+                    <h5 class="text-[11px] font-bold text-gray-400 uppercase mb-6 tracking-[0.2em]">소셜</h5>
+                    <ul class="text-[13px] space-y-3 font-medium">
+                        <li><a href="#" class="hover:underline">인스타그램</a></li>
+                        <li><a href="mailto:gs9266123@gmail.com" class="hover:underline">이메일</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-
-    <div class="py-12 border-t flex items-start gap-6">
-            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">04</span>
-            <div class="flex-1 text-left">
-                <h4 class="font-bold mb-4">인사이트</h4>
-                <p class="text-gray-500 text-sm leading-relaxed mb-10">
-                    최종 결과물입니다. 모바일 환경에서도 최적화된 비주얼을 제공하며 브랜드 아이덴티티를 유지했습니다.
-                </p>
-            </div>
+        <div class="max-w-7xl mx-auto mt-24 text-[10px] text-gray-400 uppercase tracking-widest text-left">
+            © 2026 Hyunna Lee. All rights reserved.
         </div>
-
-        
-    </main>
-
-<footer class="bg-white pt-24 pb-12 px-6 md:px-12 border-t border-gray-100 w-full shrink-0">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 text-left">
-        <div class="max-w-sm">
-            <h4 class="font-bold text-lg mb-4 text-left">Hyunna Lee</h4>
-            <p class="text-sm text-gray-500 leading-relaxed text-left">
-                브랜드와 커머스를 연결하는 사려 깊은 디자인 경험을 제공합니다.
-            </p>
-        </div>
-        <div class="flex gap-24">
-            <div class="text-left">
-                <h5 class="text-[11px] font-bold text-gray-400 uppercase mb-6 tracking-[0.2em]">소셜</h5>
-                <ul class="text-[13px] space-y-3 font-medium">
-                    <li><a href="#" class="hover:underline flex items-center gap-2">인스타그램</a></li>
-                    <li><a href="mailto:gs9266123@gmail.com" class="hover:underline flex items-center gap-2">이메일</a></li>
-                </ul>
-            </div>
-            </div>
-    </div>
-    <div class="max-w-7xl mx-auto mt-24 text-[10px] text-gray-400 uppercase tracking-widest text-left">
-        © 2026 Hyunna Lee. All rights reserved.
-    </div>
-</footer>
+    </footer>
 
 </body>
 </html>

@@ -8,19 +8,15 @@
     <style>
         @import url('https://fonts.googleapis.com/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
         
-        /* 💡 해결책 1: 스크롤바 자리를 항상 확보하여 레이아웃 밀림 방지 */
-        html { 
-            overflow-y: scroll; 
-        }
+        /* 💡 레이아웃 밀림 방지 (스크롤바 항상 확보) */
+        html { overflow-y: scroll; }
 
         body { 
             font-family: 'Pretendard', sans-serif; 
             background-color: #f9f9f9; 
             color: #1a1a1a;
-            /* 높이가 짧아져도 스크롤바가 유지되도록 강제 */
             min-height: 101vh; 
-            /* 가로 스크롤바 발생 방지 */
-            overflow-x: hidden; 
+            overflow-x: hidden;
         }
         
         .cat-btn {
@@ -59,6 +55,11 @@
         }
         .nav-item { font-size: 13px; color: #666; transition: 0.3s; }
         .nav-item:hover { color: #000; }
+
+        /* 💡 요청하신 텍스트 스타일 가이드 */
+        .project-title { font-size: 18px; font-weight: 600; color: #000; line-height: 1.4; }
+        .tool-text { font-size: 14px; color: #545c67; line-height: 1.6; }
+        .category-text { font-size: 14px; color: #7e8a9e; line-height: 1.6; }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -79,50 +80,54 @@
     <main class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-16 pb-32 flex-grow">
         <h1 class="text-4xl font-bold mb-12 text-left">포트폴리오</h1>
 
-     <div class="flex flex-wrap justify-center gap-3 mb-16" id="category-container">
-    <button class="cat-btn active" onclick="filterProjects('all')">전체</button>
-    <button class="cat-btn" onclick="filterProjects('웹디자인')">웹디자인</button>
-    <button class="cat-btn" onclick="filterProjects('브랜딩')">브랜딩</button>
-    <button class="cat-btn" onclick="filterProjects('상세페이지')">상세페이지</button>
-    <button class="cat-btn" onclick="filterProjects('배너')">배너</button>
-    <button class="cat-btn" onclick="filterProjects('영상')">영상</button>
-    <button class="cat-btn" onclick="filterProjects('로고디자인')">로고디자인</button>
-    <button class="cat-btn" onclick="filterProjects('UX/UI')">UX/UI</button>
+        <div class="flex flex-wrap justify-center gap-3 mb-16" id="category-container">
+            <button class="cat-btn active" onclick="filterProjects('all')">전체</button>
+            <button class="cat-btn" onclick="filterProjects('웹디자인')">웹디자인</button>
+            <button class="cat-btn" onclick="filterProjects('브랜딩')">브랜딩</button>
+            <button class="cat-btn" onclick="filterProjects('상세페이지')">상세페이지</button>
+            <button class="cat-btn" onclick="filterProjects('배너')">배너</button>
+            <button class="cat-btn" onclick="filterProjects('영상')">영상</button>
+            <button class="cat-btn" onclick="filterProjects('로고디자인')">로고디자인</button>
+            <button class="cat-btn" onclick="filterProjects('UX/UI')">UX/UI</button>
+            <button class="cat-btn" onclick="filterProjects('AI비주얼')">AI비주얼</button>
+            <button class="cat-btn" onclick="filterProjects('콘텐츠')">콘텐츠</button>
+        </div>
 
-    <button class="cat-btn" onclick="filterProjects('AI비주얼')">AI비주얼</button>
-    <button class="cat-btn" onclick="filterProjects('콘텐츠')">콘텐츠</button>
-</div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="project-grid">
-            
-            <div class="project-card group cursor-pointer" data-category="상세페이지" onclick="location.href='project-detail.html'">
+            <div class="project-card group cursor-pointer" data-category="브랜딩" onclick="location.href='project-detail-branding.html'">
+                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                    <img src="images/branding_work_1_5.jpg" class="w-full h-full object-cover">
+                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
+                </div>
+                <h4 class="project-title mb-1 text-left">오설록</h4>
+                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Figma, CapCut, Freepik, Midjourney, Photoshop, Whisk</p>
+                <p class="category-text text-left">브랜딩, 비주얼 콘텐츠, 영상</p>
+            </div>
+
+
+
+
+            <div class="project-card group cursor-pointer" data-category="로고디자인" onclick="location.href='project-logo-1.html'">
                 <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
                     <img src="images/logo_work1_1.jpg" class="w-full h-full object-cover">
                     <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
                 </div>
-                <h4 class="font-bold text-lg mb-1 text-left">바닐라슈 (VanillaShoes)</h4>
-                <p class="text-xs text-gray-600 mb-2 uppercase font-bold text-left">사용툴 Photoshop, Figma</p>
-                <p class="text-sm text-gray-500 text-left">상세페이지</p>
+                <h4 class="project-title mb-1 text-left">더케어 플러스 로고디자인</h4>
+                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Illustrator, Midjourney, Photoshop</p>
+                <p class="category-text text-left">CI/BI 디자인</p>
             </div>
 
-            <div class="project-card group cursor-pointer" data-category="브랜딩" onclick="location.href='project-detail-branding.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/main2.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="font-bold text-lg mb-1 text-left">브랜드 리뉴얼</h4>
-                <p class="text-xs text-gray-600 mb-2 uppercase font-bold text-left">사용툴 Illustrator, Photoshop</p>
-                <p class="text-sm text-gray-500 text-left">브랜딩</p>
-            </div>
 
-            <div class="project-card group cursor-pointer" data-category="로고디자인" onclick="location.href='project-logo-1.html'">
+
+
+            <div class="project-card group cursor-pointer" data-category="로고디자인" onclick="location.href='project-logo-2.html'">
                 <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/main3.jpg" class="w-full h-full object-cover">
+                    <img src="images/logo_work2_4.jpg" class="w-full h-full object-cover">
                     <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
                 </div>
-                <h4 class="font-bold text-lg mb-1 text-left">더케어 플러스 로고디자인</h4>
-                <p class="text-xs text-gray-400 mb-2 uppercase font-bold text-left">사용툴 Illustrator, Midjourney, Photoshop</p>
-                <p class="text-sm text-gray-500 text-left">브랜딩 로고디자인</p>
+                <h4 class="project-title mb-1 text-left">HELENA 로고 디자인</h4>
+                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Illustrator, Midjourney, Photoshop</p>
+                <p class="category-text text-left">CI/BI 디자인</p>
             </div>
 
         </div>
@@ -155,7 +160,7 @@
         function filterProjects(category) {
             const btns = document.querySelectorAll('.cat-btn');
             btns.forEach(btn => btn.classList.remove('active'));
-            if (event) {
+            if (event && event.currentTarget) {
                 event.currentTarget.classList.add('active');
             }
 
