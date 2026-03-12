@@ -56,13 +56,13 @@
 </head>
 <body>
 
-<nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto">
+<nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto w-full">
     <div class="font-bold text-lg tracking-tighter uppercase cursor-pointer" onclick="location.href='index.html'">
         LEE HYUN NA
     </div>
     
     <div class="hidden md:flex space-x-8">
-        <a href="index.html" class="nav-item">홈</a>
+        <a href="index.html" class="nav-item font-bold text-black border-b border-black pb-1">홈</a>
         <a href="about.html" class="nav-item">소개</a>
         <a href="portfolio.html" class="nav-item">포트폴리오</a>
         <a href="skills.html" class="nav-item">skills</a>
@@ -70,18 +70,26 @@
     </div>
 </nav>
 
-    <header class="max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-32">
-        <h1 class="text-5xl md:text-7xl font-bold tight-tracking mb-8 leading-[1.15]">
-            브랜드 경험을 디자인합니다<br>
-            <span class="text-gray-400">웹 & 커머스 전반에 걸쳐</span>
-        </h1>
-        <p class="text-gray-500 text-lg md:text-xl mb-12 max-w-2xl leading-relaxed">
-            이현나 — 브랜드, 비주얼, 디지털 경험을 전문으로 하는 8년 경력의 이커머스 디자이너입니다.
-        </p>
-        <a href="portfolio.html" class="btn-black">
-            포트폴리오 보기 <span class="ml-2">→</span>
-        </a>
-    </header>
+<div class="md:hidden flex justify-center space-x-6 pb-6 border-b border-gray-100 overflow-x-auto whitespace-nowrap px-6">
+    <a href="index.html" class="text-xs font-bold text-black border-b-2 border-black pb-1">홈</a>
+    <a href="about.html" class="text-xs text-gray-400">소개</a>
+    <a href="portfolio.html" class="text-xs text-gray-400">포트폴리오</a>
+    <a href="skills.html" class="text-xs text-gray-400">skills</a>
+    <a href="contact.html" class="text-xs text-gray-400">연락처</a>
+</div>
+
+<header class="max-w-7xl mx-auto px-6 md:px-12 pt-16 md:pt-20 pb-32">
+    <h1 class="text-4xl md:text-7xl font-bold tight-tracking mb-8 leading-[1.15]">
+        브랜드 경험을 디자인합니다<br>
+        <span class="text-gray-400">웹 & 커머스 전반에 걸쳐</span>
+    </h1>
+    <p class="text-gray-500 text-base md:text-xl mb-12 max-w-2xl leading-relaxed">
+        이현나 — 브랜드, 비주얼, 디지털 경험을 전문으로 하는 8년 경력의 이커머스 디자이너입니다.
+    </p>
+    <a href="portfolio.html" class="btn-black">
+        포트폴리오 보기 <span class="ml-2">→</span>
+    </a>
+</header>
 
     <section id="portfolio" class="max-w-7xl mx-auto px-6 md:px-12 pb-32">
         <div class="flex justify-between items-end mb-12">

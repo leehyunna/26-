@@ -27,23 +27,31 @@
 </head>
 <body>
 
-<nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto">
+<nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto w-full">
     <div class="font-bold text-lg tracking-tighter uppercase cursor-pointer" onclick="location.href='index.html'">
         LEE HYUN NA
     </div>
     
     <div class="hidden md:flex space-x-8">
         <a href="index.html" class="nav-item">홈</a>
-        <a href="about.html" class="nav-item font-bold text-black">소개</a>
+        <a href="about.html" class="nav-item font-bold text-black border-b border-black pb-1">소개</a>
         <a href="portfolio.html" class="nav-item">포트폴리오</a>
         <a href="skills.html" class="nav-item">skills</a>
         <a href="contact.html" class="nav-item">연락처</a>
     </div>
 </nav>
 
-    <section class="max-w-7xl mx-auto px-6 md:px-12 pt-16 pb-32 flex flex-col md:flex-row justify-between items-start gap-16">
+<div class="md:hidden flex justify-center space-x-6 pb-6 border-b border-gray-100 overflow-x-auto whitespace-nowrap px-6">
+    <a href="index.html" class="text-xs text-gray-400">홈</a>
+    <a href="about.html" class="text-xs font-bold text-black border-b-2 border-black pb-1">소개</a>
+    <a href="portfolio.html" class="text-xs text-gray-400">포트폴리오</a>
+    <a href="skills.html" class="text-xs text-gray-400">skills</a>
+    <a href="contact.html" class="text-xs text-gray-400">연락처</a>
+</div>
+
+    <section class="max-w-7xl mx-auto px-6 md:px-12 pt-16 pb-24 md:pb-32 flex flex-col md:flex-row justify-between items-start gap-12 md:gap-16">
         <div class="md:w-1/2">
-            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-10 text-left">
+            <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-8 md:10 text-left">
                 브랜드와 커머스를<br>연결합니다
             </h1>
             <div class="text-gray-500 text-base md:text-lg leading-relaxed space-y-4 max-w-lg text-left">
@@ -59,7 +67,7 @@
         </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-6 md:px-12 pb-32 grid md:grid-cols-2 gap-20">
+    <section class="max-w-7xl mx-auto px-6 md:px-12 pb-32 grid md:grid-cols-2 gap-16 md:gap-20">
         <div class="text-left">
             <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-10">경력</h3>
             <div class="flex justify-between items-start">
@@ -73,7 +81,7 @@
                         <li>• Cafe24 사이트 운영 및 유지보수</li>
                     </ul>
                 </div>
-                <div class="text-sm text-gray-400 font-medium">2017 — 2025</div>
+                <div class="text-sm text-gray-400 font-medium shrink-0">2017 — 2025</div>
             </div>
         </div>
 
@@ -110,7 +118,7 @@
                     <li><a href="mailto:gs9266123@gmail.com" class="hover:underline flex items-center gap-2">이메일</a></li>
                 </ul>
             </div>
-            </div>
+        </div>
     </div>
     <div class="max-w-7xl mx-auto mt-24 text-[10px] text-gray-400 uppercase tracking-widest text-left">
         © 2026 Hyunna Lee. All rights reserved.

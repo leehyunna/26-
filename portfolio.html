@@ -26,7 +26,7 @@
         .tool-text { font-size: 12px; color: #4b5563; line-height: 1.6; }
         .category-text { font-size: 12px; color: #9ca3af; line-height: 1.6; }
 
-        /* 💡 유튜브 UI 최적화: 1.4배 확대로 지저분한 정보 가리기 */
+        /* 💡 유튜브 UI 최적화 */
         .video-container { position: relative; width: 100%; height: 100%; overflow: hidden; background: #000; pointer-events: none; }
         .video-container iframe { 
             position: absolute; 
@@ -34,7 +34,6 @@
             left: 50%; 
             width: 100%; 
             height: 100%; 
-            /* 1.4배 확대가 가장 적당하게 정보를 가려줍니다 */
             transform: translate(-50%, -50%) scale(1.4); 
         }
     </style>
@@ -43,19 +42,28 @@
 
     <nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto w-full">
         <div class="font-bold text-lg tracking-tighter uppercase cursor-pointer" onclick="location.href='index.html'">LEE HYUN NA</div>
+        
         <div class="hidden md:flex space-x-8">
             <a href="index.html" class="nav-item">홈</a>
             <a href="about.html" class="nav-item">소개</a>
-            <a href="portfolio.html" class="nav-item font-bold text-black">포트폴리오</a>
+            <a href="portfolio.html" class="nav-item font-bold text-black border-b border-black pb-1">포트폴리오</a>
             <a href="skills.html" class="nav-item">skills</a>
             <a href="contact.html" class="nav-item">연락처</a>
         </div>
     </nav>
 
-    <main class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-16 pb-32 flex-grow">
+    <div class="md:hidden flex justify-center space-x-6 pb-6 border-b border-gray-100 overflow-x-auto whitespace-nowrap px-6">
+        <a href="index.html" class="text-xs text-gray-400">홈</a>
+        <a href="about.html" class="text-xs text-gray-400">소개</a>
+        <a href="portfolio.html" class="text-xs font-bold text-black border-b-2 border-black pb-1">포트폴리오</a>
+        <a href="skills.html" class="text-xs text-gray-400">skills</a>
+        <a href="contact.html" class="text-xs text-gray-400">연락처</a>
+    </div>
+
+    <main class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-12 md:pt-16 pb-32 flex-grow">
         <h1 class="text-4xl font-bold mb-12 text-left">포트폴리오</h1>
 
-        <div class="flex flex-wrap justify-center gap-3 mb-16" id="category-container">
+        <div class="flex flex-wrap justify-start md:justify-center gap-3 mb-16" id="category-container">
             <button class="cat-btn active" onclick="filterProjects('all')">전체</button>
             <button class="cat-btn" onclick="filterProjects('브랜딩')">브랜딩</button>
             <button class="cat-btn" onclick="filterProjects('상세페이지')">상세페이지</button>
@@ -134,9 +142,7 @@
 
             <div class="project-card group cursor-pointer md:col-span-2" data-category="영상" onclick="location.href='project-Video-1.html'">
                 <div class="relative aspect-video rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/HJBZ7NPSch8?autoplay=1&mute=1&loop=1&playlist=HJBZ7NPSch8&controls=0&modestbranding=1&rel=0&iv_load_policy=3" frameborder="0" allow="autoplay; encrypted-media"></iframe>
-                    </div>
+                     <img src="images/video_work_1.jpg" class="w-full h-full object-cover">
                     <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
                 </div>
                 <h4 class="project-title mb-1 text-left">유튜브 콘텐츠 기획 및 영상 제작 프로젝트</h4>
@@ -168,7 +174,7 @@
 
             <div class="project-card group cursor-pointer" data-category="AI비주얼" onclick="location.href='project-AI Visual-3.html'">
                 <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/AI Visual_wokr3_2.jpg" class="w-full h-full object-cover">
+                    <img src="images/AI-Visual_wokr3_2.jpg" class="w-full h-full object-cover">
                     <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
                 </div>
                 <h4 class="project-title mb-1 text-left">AI 활용 제품 비주얼 및 광고 이미지 제작</h4>
