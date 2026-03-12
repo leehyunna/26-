@@ -17,23 +17,42 @@
             word-break: keep-all; 
         }
 
-        /* 💡 모바일 글씨 밀림 및 겹침 방지 최적화 */
+        /* 💡 모바일 글씨 최적화 */
         .project-title {
-            /* 모바일에서 글자가 너무 커서 밀리지 않도록 유연한 크기 적용 */
             font-size: clamp(1.8rem, 6vw, 2.5rem); 
             line-height: 1.2;
             word-break: keep-all;
         }
 
-        /* 모바일 정보 그리드 레이아웃 최적화 */
+        /* 💡 유튜브 채널명 가리기 및 화질 최적화를 위한 컨테이너 */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto 1.5rem;
+            aspect-ratio: 9/16;
+            border-radius: 24px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%) scale(1.15); /* 👈 1.15배 확대하여 상단 채널 정보와 하단 로고를 프레임 밖으로 밀어냄 */
+            pointer-events: none; /* 클릭 방지 */
+        }
+
         @media (max-width: 768px) {
             .info-grid {
-                grid-template-columns: repeat(2, 1fr) !important; /* 5열에서 2열로 변경 */
+                grid-template-columns: repeat(2, 1fr) !important;
                 gap: 2rem 1rem !important;
             }
         }
 
-        /* 덜컥거림 방지 */
         html { overflow-y: scroll; }
         body { min-height: 101vh; }
     </style>
@@ -76,7 +95,7 @@
             </div>
             <div>
                 <p class="text-[17px] text-gray-900 font-extrabold mb-3">분야</p>
-                <p class="font-bold text-gray-600" style="font-size: 0.9em;">AI 비주얼 / AI 이미지 생성 / AI 영상 제작</p>
+                <p class="font-bold text-gray-600" style="font-size: 0.9em;">AI 비주얼 / AI 영상 제작</p>
             </div>
             <div>
                 <p class="text-[17px] text-gray-900 font-extrabold mb-3">기여도</p>
@@ -88,11 +107,7 @@
             <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">01</span>
             <div class="flex-1 text-left">
                 <h4 class="font-bold mb-4">프로젝트 개요</h4>
-                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">
-글로우 립 제품의 촉촉하고 반짝이는 질감을 강조하기 위해 AI를 활용하여 제작한 뷰티 비주얼 프로젝트입니다.
-단일 제품컷을 기반으로 제품 연출컷, 모델컷, 비주얼 이미지, 모션 영상까지 확장하여 광고 및 콘텐츠에서 활용 가능한 다양한 비주얼을 제작했습니다.
-
-특히 글로우 립 제품의 특성을 살리기 위해 핑크 톤 컬러와 글로시한 질감 표현을 중심으로 비주얼 방향을 설정하였으며, 브랜드 감성과 제품 분위기가 자연스럽게 연결되도록 모델 스타일링과 배경 연출을 함께 구성했습니다.</p>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">글로우 립 제품의 촉촉하고 반짝이는 질감을 강조하기 위해 AI를 활용하여 제작한 뷰티 비주얼 프로젝트입니다. 단일 제품컷을 기반으로 제품 연출컷, 모델컷, 비주얼 이미지, 모션 영상까지 확장하여 광고 및 콘텐츠에서 활용 가능한 다양한 비주얼을 제작했습니다.</p>
             </div>
         </div>
 
@@ -104,73 +119,27 @@
                     <h2 class="font-bold mb-4 text-center w-full text-lg">< 제품컷 ></h2>			
                     <img src="images/AI Visual_wokr1_1.png" alt="결과물1" class="content-media">
                     <img src="images/AI-Visual_wokr1_2.jpg" alt="결과물2" class="content-media">
-                    <img src="images/AI-Visual_wokr1_3.jpg" alt="결과물3" class="content-media">
-                    <img src="images/AI-Visual_wokr1_4.jpg" alt="결과물4" class="content-media">
-                    <img src="images/AI-Visual_wokr1_5.jpg" alt="결과물5" class="content-media">
-
-                    <div class="relative overflow-hidden rounded-3xl bg-gray-200 mb-6 mx-auto" style="aspect-ratio: 9/16; max-width: 450px;">
+<img src="images/AI-Visual_wokr1_3.jpg" alt="결과물3" class="content-media">
+                    
+                    <h2 class="font-bold mb-4 text-center w-full text-lg">< 모션 영상 ></h2>
+                    <div class="video-wrapper">
                         <iframe 
-                            class="absolute top-0 left-0 w-full h-full" 
-                            src="https://www.youtube.com/embed/HJBZ7NPSch8?autoplay=1&mute=1&loop=1&playlist=HJBZ7NPSch8" 
-                            title="AI Visual work" 
+                            src="https://www.youtube.com/embed/HJBZ7NPSch8?autoplay=1&mute=1&loop=1&playlist=HJBZ7NPSch8&controls=0&modestbranding=1&rel=0&iv_load_policy=3&vq=hd1080" 
                             frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="no-referrer-when-downgrade"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
                     </div>
+
+                    
                 </div>
             </div>
         </div>
 
-        <div class="py-12 border-t flex items-start gap-6">
-            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">03</span>
-            <div class="flex-1 text-left">
-                <h4 class="font-bold mb-4">주요작업</h4>
-                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">
-1. AI를 활용한 뷰티 제품 비주얼 기획
-2. 제품컷 기반 연출컷 이미지 생성
-3. AI 모델 이미지 생성 및 스타일 연출
-4. 글로우 립 제품 특성을 강조한 글로시 질감 표현
-5. 제품 광고용 비주얼 이미지 제작
-6. AI 기반 제품 모션 영상 제작</p>
-            </div>
-        </div>
-
-        <div class="py-12 border-t flex items-start gap-6">
-            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">05</span>
-            <div class="flex-1 text-left">
-                <h4 class="font-bold mb-4">인사이트</h4>
-                <p class="desc-text text-gray-700 text-[15px] leading-relaxed">AI를 활용하면 단일 제품 이미지를 기반으로 다양한 비주얼 콘텐츠를 빠르게 확장할 수 있으며,
-특히 뷰티 제품의 경우 제품 질감, 컬러 분위기, 모델 스타일링을 함께 설계하면 브랜드 이미지와 제품 콘셉트를 더욱 효과적으로 전달할 수 있습니다.
-
-이번 작업에서는 글로우 립의 핵심 특징인 촉촉한 광택감과 핑크 컬러 톤을 중심으로 비주얼 방향을 설정하여 제품, 모델, 배경이 하나의 감성으로 연결되도록 디자인했습니다.
-
-또한 제품 이미지를 기반으로 AI 모션 콘텐츠까지 확장하여 광고 콘텐츠 제작 과정에서 활용 가능한 비주얼 제작 방식을 실험했습니다.</p>
-            </div>
-        </div>
-    </main>
+        </main>
 
     <footer class="bg-white pt-24 pb-12 px-6 md:px-12 border-t border-gray-100 w-full shrink-0">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 text-left">
-            <div class="max-w-sm">
-                <h4 class="font-bold text-lg mb-4 text-left">Hyunna Lee</h4>
-                <p class="text-sm text-gray-500 leading-relaxed text-left">브랜드와 커머스를 연결하는 사려 깊은 디자인 경험을 제공합니다.</p>
-            </div>
-            <div class="flex gap-24">
-                <div class="text-left">
-                    <h5 class="text-[11px] font-bold text-gray-400 uppercase mb-6 tracking-[0.2em]">소셜</h5>
-                    <ul class="text-[13px] space-y-3 font-medium">
-                        <li><a href="#" class="hover:underline">인스타그램</a></li>
-                        <li><a href="mailto:gs9266123@gmail.com" class="hover:underline">이메일</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto mt-24 text-[10px] text-gray-400 uppercase tracking-widest text-left">
-            © 2026 Hyunna Lee. All rights reserved.
-        </div>
-    </footer>
+        </footer>
 
 </body>
 </html>
