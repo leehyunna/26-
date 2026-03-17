@@ -43,10 +43,29 @@
     <nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto w-full">
         <div class="font-bold text-lg tracking-tighter uppercase cursor-pointer" onclick="location.href='index.html'">LEE HYUN NA</div>
         
-        <div class="hidden md:flex space-x-8">
+        <div class="hidden md:flex space-x-8 items-center relative">
             <a href="index.html" class="nav-item">홈</a>
             <a href="about.html" class="nav-item">소개</a>
-            <a href="portfolio.html" class="nav-item font-bold text-black border-b border-black pb-1">포트폴리오</a>
+            
+            <div class="relative group cursor-pointer">
+                <a href="portfolio.html" class="nav-item font-bold text-black border-b border-black pb-1 inline-block">포트폴리오</a>
+                
+                <div class="absolute left-1/2 -translate-x-1/2 top-full pt-2 hidden group-hover:flex flex-col items-center z-50 w-max">
+                    <div class="bg-white border border-gray-100 shadow-lg rounded-xl py-3 px-5 flex flex-col gap-3 w-full">
+                        <button onclick="goToPortfolio('all')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">전체보기</button>
+                        <button onclick="goToPortfolio('브랜딩')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">브랜딩</button>
+                        <button onclick="goToPortfolio('상세페이지')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">상세페이지</button>
+                        <button onclick="goToPortfolio('배너')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">배너</button>
+                        <button onclick="goToPortfolio('AI비주얼')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">AI비주얼</button>
+                        <button onclick="goToPortfolio('로고디자인')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">로고디자인</button>
+                        <button onclick="goToPortfolio('인물리터칭')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">인물 리터칭</button>
+                        <button onclick="goToPortfolio('영상')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">영상</button>
+                        <button onclick="goToPortfolio('촬영')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">촬영</button>
+                        <button onclick="goToPortfolio('UX/UI')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">UX/UI</button>
+                    </div>
+                </div>
+            </div>
+            
             <a href="skills.html" class="nav-item">skills</a>
             <a href="contact.html" class="nav-item">연락처</a>
         </div>
@@ -55,13 +74,29 @@
     <div class="md:hidden flex justify-center space-x-6 pb-6 border-b border-gray-100 overflow-x-auto whitespace-nowrap px-6">
         <a href="index.html" class="text-xs text-gray-400">홈</a>
         <a href="about.html" class="text-xs text-gray-400">소개</a>
-        <a href="portfolio.html" class="text-xs font-bold text-black border-b-2 border-black pb-1">포트폴리오</a>
+        
+        <button type="button" id="mobile-portfolio-btn" onclick="toggleMobileMenu(event)" class="text-xs font-bold text-black border-b-2 border-black pb-1 touch-manipulation cursor-pointer">포트폴리오</button>
+        
         <a href="skills.html" class="text-xs text-gray-400">skills</a>
         <a href="contact.html" class="text-xs text-gray-400">연락처</a>
     </div>
 
+    <div id="mobile-submenu" style="display: none;" class="md:hidden flex justify-start space-x-5 py-3 bg-gray-50 border-b border-gray-100 overflow-x-auto whitespace-nowrap px-6 transition-opacity">
+        <button onclick="goToPortfolio('all')" class="text-xs text-gray-500 hover:text-black shrink-0">전체보기</button>
+        <button onclick="goToPortfolio('브랜딩')" class="text-xs text-gray-500 hover:text-black shrink-0">브랜딩</button>
+        <button onclick="goToPortfolio('상세페이지')" class="text-xs text-gray-500 hover:text-black shrink-0">상세페이지</button>
+        <button onclick="goToPortfolio('배너')" class="text-xs text-gray-500 hover:text-black shrink-0">배너</button>
+        <button onclick="goToPortfolio('AI비주얼')" class="text-xs text-gray-500 hover:text-black shrink-0">AI비주얼</button>
+        <button onclick="goToPortfolio('로고디자인')" class="text-xs text-gray-500 hover:text-black shrink-0">로고디자인</button>
+        <button onclick="goToPortfolio('인물리터칭')" class="text-xs text-gray-500 hover:text-black shrink-0">인물 리터칭</button>
+        <button onclick="goToPortfolio('영상')" class="text-xs text-gray-500 hover:text-black shrink-0">영상</button>
+        <button onclick="goToPortfolio('촬영')" class="text-xs text-gray-500 hover:text-black shrink-0">촬영</button>
+        <button onclick="goToPortfolio('UX/UI')" class="text-xs text-gray-500 hover:text-black shrink-0">UX/UI</button>
+    </div>
+
     <main class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-12 md:pt-16 pb-32 flex-grow">
         <h1 class="text-4xl font-bold mb-12 text-left">포트폴리오</h1>
+        <h2 class="font-bold mb-4 text-center w-full text-lg">영상이 포함되어 있어 로딩이 지연될 수 있습니다.표시되지 않을 경우 새로고침 후 잠시 기다려 주세요!</h2>
 
         <div class="flex flex-wrap justify-start md:justify-center gap-3 mb-16" id="category-container">
             <button class="cat-btn active" onclick="filterProjects('all')">전체</button>
@@ -70,10 +105,10 @@
             <button class="cat-btn" onclick="filterProjects('배너')">배너</button>
             <button class="cat-btn" onclick="filterProjects('AI비주얼')">AI비주얼</button>
             <button class="cat-btn" onclick="filterProjects('로고디자인')">로고디자인</button>
+            <button class="cat-btn" onclick="filterProjects('인물리터칭')">인물 리터칭</button>
             <button class="cat-btn" onclick="filterProjects('영상')">영상</button>
             <button class="cat-btn" onclick="filterProjects('촬영')">촬영</button>
             <button class="cat-btn" onclick="filterProjects('UX/UI')">UX/UI</button>
-            <!-- <button class="cat-btn" onclick="filterProjects('콘텐츠')">콘텐츠</button> -->
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="project-grid">
@@ -207,12 +242,69 @@
     </footer>
 
     <script>
+        // ⭐ 가장 확실한 인라인 스타일 토글 방식으로 복구하여 모바일 즉각 반응 보장
+        function toggleMobileMenu(event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            const menu = document.getElementById('mobile-submenu');
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'flex';
+            } else {
+                menu.style.display = 'none';
+            }
+        }
+
+        // 바탕화면 클릭 시 모바일 메뉴 닫기 (이중 터치 방지를 위해 깔끔하게 정리)
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobile-submenu');
+            
+            // 메뉴가 열려있을 때만 체크
+            if (mobileMenu && mobileMenu.style.display === 'flex') {
+                const isClickInsideMenu = event.target.closest('#mobile-submenu');
+                const isClickBtn = event.target.closest('#mobile-portfolio-btn');
+                
+                // 클릭한 곳이 메뉴 내부도 아니고, 여는 버튼도 아니면 닫음
+                if (!isClickInsideMenu && !isClickBtn) {
+                    mobileMenu.style.display = 'none';
+                }
+            }
+        });
+
+        // ⭐ 다른 페이지 연동 및 필터링 기능
+        function goToPortfolio(category) {
+            const isPortfolioPage = document.getElementById('project-grid');
+            
+            if (isPortfolioPage) {
+                filterProjects(category);
+                const mobileMenu = document.getElementById('mobile-submenu');
+                if(mobileMenu) {
+                    mobileMenu.style.display = 'none';
+                }
+            } else {
+                window.location.href = 'portfolio.html?category=' + encodeURIComponent(category);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get('category');
+            
+            if (category && document.getElementById('project-grid')) {
+                filterProjects(category);
+            }
+        });
+
         function filterProjects(category) {
             const btns = document.querySelectorAll('.cat-btn');
             btns.forEach(btn => btn.classList.remove('active'));
-            if (event && event.currentTarget) {
-                event.currentTarget.classList.add('active');
-            }
+            
+            btns.forEach(btn => {
+                if(btn.textContent.trim() === category || (category === 'all' && btn.textContent.trim() === '전체')) {
+                    btn.classList.add('active');
+                }
+            });
 
             const cards = document.querySelectorAll('.project-card');
             cards.forEach(card => {
