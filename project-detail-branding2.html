@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail | LEE HYUN NA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body { font-family: 'Pretendard', sans-serif; background-color: #f9f9f9; color: #1a1a1a; }
+        .tag { background: #eee; padding: 4px 12px; border-radius: 4px; font-size: 11px; color: #666; font-weight: 600; }
+        .content-media { width: 100%; border-radius: 24px; overflow: hidden; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        
+        /* 💡 줄바꿈을 위한 스타일: 엔터 친 대로 화면에 표시됩니다 */
+        .desc-text { 
+            white-space: pre-wrap; 
+            word-break: keep-all; 
+        }
+
+        /* 💡 모바일 글씨 밀림 및 겹침 방지 최적화 */
+        .project-title {
+            /* 모바일에서 글자가 너무 커서 밀리지 않도록 유연한 크기 적용 */
+            font-size: clamp(1.8rem, 6vw, 2.5rem); 
+            line-height: 1.2;
+            word-break: keep-all;
+        }
+
+        /* 모바일 정보 그리드 레이아웃 최적화 */
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr) !important; /* 5열에서 2열로 변경 */
+                gap: 2rem 1rem !important;
+            }
+        }
+
+        /* 덜컥거림 방지 */
+        html { overflow-y: scroll; }
+        body { min-height: 101vh; }
+    </style>
+</head>
+<body>
+
+    <nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto w-full">
+        <div class="font-bold text-lg uppercase cursor-pointer" onclick="location.href='index.html'">LEE HYUN NA</div>
+        <div class="space-x-8 text-xs text-gray-400 uppercase tracking-widest">
+            <a href="portfolio.html">Close Project ✕</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 md:py-20">
+        <p class="text-sm text-gray-600 font-bold mb-4 text-left">브랜딩 / 뷰티 비주얼 디자인 / AI 비주얼</p>
+        
+        <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-12">
+            <h1 class="project-title font-bold text-left">AI 기반 뷰티 브랜드 기획 및 비주얼 디자인</h1>
+            <div class="flex flex-wrap gap-2">
+                <span class="tag">Freepik</span>
+                <span class="tag">Midjourney</span>
+                <span class="tag">Photoshop</span>
+                <span class="tag">ChatGPT</span>
+                <span class="tag">Illustrator</span>
+            </div>
+        </div>
+
+        <h3 class="font-bold mb-8 border-b pb-4 text-left">프로젝트 정보</h3>
+        <div class="grid grid-cols-5 gap-4 mb-20 text-center info-grid">
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">역할</p>
+                <p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">1. 브랜드 컨셉 및 키워드 기획</p>
+		<p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">2. 로고 디자인 및 타이포그래피 개발</p>
+		<p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">3. AI 모델 생성 및 비주얼 디렉팅</p>
+		<p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">4. 제품 이미지 및 패키지 비주얼 제작</p>
+		<p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">5. 키비주얼 및 배너 디자인</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">연도</p>
+                <p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">2026</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">유형</p>
+                <p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">개인프로젝트</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">분야</p>
+                <p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">브랜딩 / 뷰티 비주얼 디자인 / AI 비주얼</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">기여도</p>
+                <p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">100%</p>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">01</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">프로젝트 개요</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">가상의 수분크림 브랜드 ‘AQUELIA’를 기획하고 브랜드 컨셉부터 제품, 모델, 비주얼, 배너까지 전체 브랜딩을 설계한 프로젝트입니다.
+
+Balance, Calm, Soft Light 키워드를 기반으로 차분한 컬러와 부드러운 광 표현을 통해 ‘수분 진정’의 이미지를 시각적으로 구현했습니다.</p>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">02</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">프로젝트 컨셉</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">📌 <b>브랜드 키워드</b> : Balance, Calm, Soft Light
+📌 <b>핵심 메시지</b> : 하루 종일, 흔들림 없는 수분 진정
+📌 <b>톤 & 무드</b> : 차분한 연블루 컬러 베이스, 과하지 않은 자연스러운 광, 공기감 있는 여백 중심 구성
+</p>
+
+		<div class="space-y-6">
+                    <img src="images/branding_work_2_6.jpg" alt="결과물1" class="content-media">
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">03</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">프로젝트 완성</h4>
+                <div class="space-y-6">
+			<h2 class="font-bold mb-4 text-center w-full text-lg">< 제품 중심 비주얼 ></h2>
+			<P>수분감과 텍스처를 강조한 제품 중심의 비주얼입니다. 투명한 용기와 크림의 질감을 통해 촉촉하고 안정적인 이미지를 전달하도록 구성했습니다.</P>
+                      <img src="images/branding_work_2_7.png" alt="결과물1" class="content-media">
+
+
+<br>
+<br>
+<br>
+<br>
+			<h2 class="font-bold mb-4 text-center w-full text-lg">< 로고제작 ></h2>
+			<P>브랜드 키워드인 Balance, Calm을 바탕으로 절제된 형태와 안정적인 비율의 타이포그래피 로고를 제작했습니다.</P>
+                      <img src="images/branding_work_2_1.png" alt="결과물1" class="content-media">
+
+<br>
+<br>
+<br>
+<br>
+			<h2 class="font-bold mb-4 text-center w-full text-lg">< 모델 연출 비주얼 ></h2>
+			<P>브랜드 무드에 맞는 AI 모델을 제작하고 피부 톤과 광 표현을 조정하여 수분감이 강조된 비주얼을 구성했습니다.</P>
+                    	<img src="images/branding_work_2_2.jpg" alt="결과물1" class="content-media">
+			<img src="images/branding_work_2_3.jpg" alt="결과물1" class="content-media">
+<br>
+<br>
+<br>
+<br>
+			<h2 class="font-bold mb-4 text-center w-full text-lg">< 제품 + 모델 결합 ></h2>
+			<P>제품과 모델을 결합하여 실제 광고 형태의 비주얼을 제작했습니다. 톤과 조명 방향을 맞춰 이질감 없이 자연스럽게 연결되도록 작업했습니다.</P>
+                    	<img src="images/branding_work_2_4.jpg" alt="결과물1" class="content-media">
+			<img src="images/branding_work_2_5.jpg" alt="결과물1" class="content-media">
+<br>
+<br>
+<br>
+<br>
+			<h2 class="font-bold mb-4 text-center w-full text-lg">< 키비주얼 ></h2>
+			<P>브랜드 메시지를 중심으로 제품의 기능과 감성을 동시에 전달하는 메인 키비주얼을 제작했습니다.</P>
+                    	<img src="images/branding_work_2_9.jpg" alt="결과물1" class="content-media">
+<br>
+<br>
+<br>
+<br>
+			<h2 class="font-bold mb-4 text-center w-full text-lg">< 브랜드 확장 비주얼 ></h2>
+			<P>브랜드 무드에 맞는 모델과 제품을 함께 구성하여 광고 형태로 확장한 비주얼입니다.</P>
+			<img src="images/branding_work_2_10.jpg" alt="결과물1" class="content-media">
+<br>
+<br>
+<br>
+<br>
+	
+			<h2 class="font-bold mb-4 text-center w-full text-lg">< 배너 확장 ></h2>
+			<P>키비주얼을 기반으로 실제 커머스 환경에서 활용 가능한 배너 형태로 확장 제작했습니다.</P>
+                    	<img src="images/?.jpg" alt="결과물1" class="content-media">	
+                </div>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">04</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">주요작업</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">1. 브랜드 키워드 및 컨셉 기획
+2. 컬러 및 비주얼 방향 설정
+3. AI 모델 생성 및 디렉팅
+4. 제품 이미지 제작 및 합성
+5. 키비주얼 및 배너 디자인 확장
+</p>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">05</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">인사이트</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed">브랜드 컨셉을 먼저 명확하게 설정한 후 비주얼을 확장하는 것이 전체 완성도를 높이는 데 중요하다고 느꼈습니다.
+AI를 활용한 작업에서도 톤, 질감, 광 표현 기준을 먼저 정리해야 일관된 결과물을 만들 수 있었습니다.
+또한 하나의 제품을 모델컷, 제품컷, 배너까지 확장하며 브랜드 전체를 설계하는 경험을 할 수 있었습니다.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white pt-24 pb-12 px-6 md:px-12 border-t border-gray-100 w-full shrink-0">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 text-left">
+            <div class="max-w-sm">
+                <h4 class="font-bold text-lg mb-4 text-left">Hyunna Lee</h4>
+                <p class="text-sm text-gray-500 leading-relaxed text-left">브랜드와 커머스를 연결하는 사려 깊은 디자인 경험을 제공합니다.</p>
+            </div>
+            <div class="flex gap-24">
+                <div class="text-left">
+                    <h5 class="text-[11px] font-bold text-gray-400 uppercase mb-6 tracking-[0.2em]">소셜</h5>
+                    <ul class="text-[13px] space-y-3 font-medium">
+                        <li><a href="#" class="hover:underline">인스타그램</a></li>
+                        <li><a href="mailto:gs9266123@gmail.com" class="hover:underline">이메일</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-24 text-[10px] text-gray-400 uppercase tracking-widest text-left">
+            © 2026 Hyunna Lee. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
