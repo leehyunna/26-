@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail | LEE HYUN NA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body { font-family: 'Pretendard', sans-serif; background-color: #f9f9f9; color: #1a1a1a; }
+        .tag { background: #eee; padding: 4px 12px; border-radius: 4px; font-size: 11px; color: #666; font-weight: 600; }
+        .content-media { width: 100%; border-radius: 24px; overflow: hidden; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        
+        /* 💡 줄바꿈을 위한 스타일: 엔터 친 대로 화면에 표시됩니다 */
+        .desc-text { 
+            white-space: pre-wrap; 
+            word-break: keep-all; 
+        }
+
+        /* 💡 모바일 글씨 밀림 및 겹침 방지 최적화 */
+        .project-title {
+            /* 모바일에서 글자가 너무 커서 밀리지 않도록 유연한 크기 적용 */
+            font-size: clamp(1.8rem, 6vw, 2.5rem); 
+            line-height: 1.2;
+            word-break: keep-all;
+        }
+
+        /* 모바일 정보 그리드 레이아웃 최적화 */
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr) !important; /* 5열에서 2열로 변경 */
+                gap: 2rem 1rem !important;
+            }
+        }
+
+        /* 덜컥거림 방지 */
+        html { overflow-y: scroll; }
+        body { min-height: 101vh; }
+    </style>
+</head>
+<body>
+
+    <nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto w-full">
+        <div class="font-bold text-lg uppercase cursor-pointer" onclick="location.href='index.html'">LEE HYUN NA</div>
+        <div class="space-x-8 text-xs text-gray-400 uppercase tracking-widest">
+            <a href="portfolio.html">Close Project ✕</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 md:py-20">
+        <p class="text-sm text-gray-600 font-bold mb-4 text-left">브랜딩 / 로고디자인</p>
+        
+        <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-12">
+            <h1 class="project-title font-bold text-left">다미온(DAMION) 한정식 브랜드 로고 디자인</h1>
+            <div class="flex flex-wrap gap-2">
+                <span class="tag">Illustrator</span>
+                <span class="tag">Freepik</span>
+                <span class="tag">Photoshop</span>
+		<span class="tag">CapCut</span>
+            </div>
+        </div>
+
+        <h3 class="font-bold mb-8 border-b pb-4 text-left">프로젝트 정보</h3>
+        <div class="grid grid-cols-5 gap-4 mb-20 text-center info-grid">
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">역할</p>
+                <p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">로고 컨셉 기획</p>
+		<p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">심볼 및 타이포 디자인</p>
+		<p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">벡터 작업 및 시각화</p>
+		<p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">목업 이미지 제작</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">연도</p>
+                <p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">2026</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">유형</p>
+                <p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">개인프로젝트</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">분야</p>
+                <p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">Logo Design</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">기여도</p>
+                <p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">100%</p>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">01</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">프로젝트 개요</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">고급 한정식 식당 ‘다미온’을 위한 브랜드 로고 디자인 프로젝트입니다.
+가상의 브랜드를 설정하고, 핵심 키워드와 컨셉을 정의하는 것에서부터 작업을 시작했습니다.
+
+상호명 ‘다미온’을 기반으로, ‘고급 한정식 식당’이라는 키워드와 ‘면으로만 이루어진 깔끔한 느낌’이라는 컨셉을 설정하여 디자인 방향을 구성했습니다.
+
+불필요한 요소를 최소화하고 선(Line)으로만 형태를 구성하여, 정돈되고 깔끔한 인상을 전달하는 데 집중했습니다. 또한 한정식 특유의 정갈함과 균형감을 표현하기 위해 원형 구조를 기반으로 디자인을 전개했습니다.
+
+한옥 기와와 식기 형태를 모티브로 활용하여 한식의 분위기를 직관적으로 담아내고, 전체 요소를 단순화하여 안정감 있는 로고 형태로 완성했습니다.
+
+
+</p>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">02</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">프로젝트 완성</h4>
+                <div class="space-y-6">
+                    <img src="images/logo_work3_1.jpg" alt="결과물1" class="content-media">
+                </div>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">03</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">주요작업</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">- 한정식의 이미지를 상징할 수 있는 ‘뚝배기 형태’ 심볼 디자인
+- 한옥 기와 디테일을 활용한 원형 프레임 구성
+- 다미온’ 타이포를 직접 드로잉하여 브랜드만의 개성 있는 레터링 제작
+- 전체 요소를 선(Line) 기반으로 통일하여 미니멀하고 정돈된 인상 구현
+- 실제 간판 적용을 고려한 네온 스타일 목업 제작</p>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">05</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">인사이트</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed">단순히 전통적인 요소를 나열하는 것이 아니라, ‘얼마나 덜어내면서도 의미를 유지할 수 있는지’가 중요하다는 점을 경험했습니다.
+
+특히 선의 두께, 간격, 균형만으로도 브랜드의 분위기가 크게 달라지기 때문에 디테일 조정이 전체 완성도에 큰 영향을 준다는 것을 확인했습니다.
+
+또한 실제 사용 환경(간판, 조명 등)을 고려한 목업 작업을 통해 디자인이 단순 시각 결과물이 아니라, 공간과 함께 작동하는 요소라는 점을 다시 인식하게 되었습니다.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white pt-24 pb-12 px-6 md:px-12 border-t border-gray-100 w-full shrink-0">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 text-left">
+            <div class="max-w-sm">
+                <h4 class="font-bold text-lg mb-4 text-left">Hyunna Lee</h4>
+                <p class="text-sm text-gray-500 leading-relaxed text-left">브랜드와 커머스를 연결하는 사려 깊은 디자인 경험을 제공합니다.</p>
+            </div>
+            <div class="flex gap-24">
+                <div class="text-left">
+                    <h5 class="text-[11px] font-bold text-gray-400 uppercase mb-6 tracking-[0.2em]">소셜</h5>
+                    <ul class="text-[13px] space-y-3 font-medium">
+                        <li><a href="#" class="hover:underline">인스타그램</a></li>
+                        <li><a href="mailto:gs9266123@gmail.com" class="hover:underline">이메일</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-24 text-[10px] text-gray-400 uppercase tracking-widest text-left">
+            © 2026 Hyunna Lee. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
