@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail | LEE HYUN NA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body { font-family: 'Pretendard', sans-serif; background-color: #f9f9f9; color: #1a1a1a; }
+        .tag { background: #eee; padding: 4px 12px; border-radius: 4px; font-size: 11px; color: #666; font-weight: 600; }
+        .content-media { width: 100%; border-radius: 24px; overflow: hidden; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        
+        /* 💡 줄바꿈을 위한 스타일 */
+        .desc-text { 
+            white-space: pre-wrap; 
+            word-break: keep-all; 
+        }
+
+        /* 💡 모바일 글씨 최적화 */
+        .project-title {
+            font-size: clamp(1.8rem, 6vw, 2.5rem); 
+            line-height: 1.2;
+            word-break: keep-all;
+        }
+
+        /* 💡 유튜브 컨테이너 스타일 (원본 비율 유지) */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto 1.5rem;
+            aspect-ratio: 9/16;
+            border-radius: 24px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 2rem 1rem !important;
+            }
+        }
+
+        html { overflow-y: scroll; }
+        body { min-height: 101vh; }
+    </style>
+</head>
+<body>
+
+    <nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto w-full">
+        <div class="font-bold text-lg uppercase cursor-pointer" onclick="location.href='index.html'">LEE HYUN NA</div>
+        <div class="space-x-8 text-xs text-gray-400 uppercase tracking-widest">
+            <a href="portfolio.html">Close Project ✕</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 md:py-20">
+        <p class="text-sm text-gray-600 font-bold mb-4 text-left">상품기획 / 페이지작업 / 촬영기획</p>
+        
+        <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-12">
+            <h1 class="project-title font-bold text-left">바닐라슈 펌프스 촬영기획 및 상세페이지 작업</h1>
+            <div class="flex flex-wrap gap-2">
+                <span class="tag">Photoshop</span>
+            </div>
+        </div>
+
+        <h3 class="font-bold mb-8 border-b pb-4 text-left">프로젝트 정보</h3>
+        <div class="grid grid-cols-5 gap-4 mb-20 text-center info-grid">
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">역할</p>
+                <p class="font-bold text-gray-600" style="font-size: 0.9em;">모델리터칭</p>
+                <p class="font-bold text-gray-600" style="font-size: 0.9em;">상세페이지 작업</p>
+                <p class="font-bold text-gray-600" style="font-size: 0.9em;">촬영 기획</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">연도</p>
+                <p class="font-bold text-gray-600" style="font-size: 0.9em;">2024</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">유형</p>
+                <p class="font-bold text-gray-600" style="font-size: 0.9em;">실무프로젝트</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">분야</p>
+                <p class="font-bold text-gray-600" style="font-size: 0.9em;">상세페이지작업, 상품기획, 촬영기획</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">기여도</p>
+                <p class="font-bold text-gray-600" style="font-size: 0.9em;">100%</p>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">01</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">프로젝트 개요</h4>자체 제작 상품의 기획 단계부터 상세페이지 제작까지 전 과정을 담당했습니다.
+상단 인트로 구성 기획, 촬영 콘셉트 기획 및 이미지 연출기획, 상품의 강점이 자연스럽게 전달되도록 구성했습니다.</p>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">02</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">프로젝트 완성</h4>
+                <div class="space-y-6">
+		   <img src="images/Product-page_wokr7_1.jpg" alt="결과물1" class="content-media">		
+                    <img src="images/Product-page_wokr7_2.jpg" alt="결과물1" class="content-media">			
+		    <img src="images/Product-page_wokr7_3.jpg" alt="결과물1" class="content-media">
+                   </div>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">03</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">주요작업</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">1. 상품 강점을 도출하여 인트로 제작
+2. 촬영 콘셉트 기획 및 비주얼 디렉팅
+3. 이미지 리터칭 및 상세페이지 디자인 제작
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-white pt-24 pb-12 px-6 md:px-12 border-t border-gray-100 w-full shrink-0">
+    </footer>
+
+</body>
+</html>

@@ -54,9 +54,9 @@
                     <div class="bg-white border border-gray-100 shadow-lg rounded-xl py-3 px-5 flex flex-col gap-3 w-full">
                         <button onclick="goToPortfolio('all')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">전체보기</button>
                         <button onclick="goToPortfolio('브랜딩')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">브랜딩</button>
+                        <button onclick="goToPortfolio('AI비주얼')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">AI비주얼</button>
                         <button onclick="goToPortfolio('상세페이지')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">상세페이지</button>
                         <button onclick="goToPortfolio('배너')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">배너</button>
-                        <button onclick="goToPortfolio('AI비주얼')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">AI비주얼</button>
                         <button onclick="goToPortfolio('로고디자인')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">로고디자인</button>
                         <!-- 수정: 인물리터칭 바로 이동 -->
                         <button onclick="location.href='project-retouching.html'" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">인물 리터칭</button>
@@ -83,9 +83,9 @@
     <div id="mobile-submenu" style="display: none;" class="md:hidden flex justify-start space-x-5 py-3 bg-gray-50 border-b border-gray-100 overflow-x-auto whitespace-nowrap px-6 transition-opacity">
         <button onclick="goToPortfolio('all')" class="text-xs text-gray-500 hover:text-black shrink-0">전체보기</button>
         <button onclick="goToPortfolio('브랜딩')" class="text-xs text-gray-500 hover:text-black shrink-0">브랜딩</button>
+        <button onclick="goToPortfolio('AI비주얼')" class="text-xs text-gray-500 hover:text-black shrink-0">AI비주얼</button>
         <button onclick="goToPortfolio('상세페이지')" class="text-xs text-gray-500 hover:text-black shrink-0">상세페이지</button>
         <button onclick="goToPortfolio('배너')" class="text-xs text-gray-500 hover:text-black shrink-0">배너</button>
-        <button onclick="goToPortfolio('AI비주얼')" class="text-xs text-gray-500 hover:text-black shrink-0">AI비주얼</button>
         <button onclick="goToPortfolio('로고디자인')" class="text-xs text-gray-500 hover:text-black shrink-0">로고디자인</button>
         <!-- 수정: 인물리터칭 바로 이동 -->
         <button onclick="location.href='project-retouching.html'" class="text-xs text-gray-500 hover:text-black shrink-0">인물 리터칭</button>
@@ -101,9 +101,9 @@
         <div class="flex flex-wrap justify-start md:justify-center gap-3 mb-16" id="category-container">
             <button class="cat-btn active" onclick="filterProjects('all')">전체</button>
             <button class="cat-btn" onclick="filterProjects('브랜딩')">브랜딩</button>
+            <button class="cat-btn" onclick="filterProjects('AI비주얼')">AI비주얼</button>
             <button class="cat-btn" onclick="filterProjects('상세페이지')">상세페이지</button>
             <button class="cat-btn" onclick="filterProjects('배너')">배너</button>
-            <button class="cat-btn" onclick="filterProjects('AI비주얼')">AI비주얼</button>
             <button class="cat-btn" onclick="filterProjects('로고디자인')">로고디자인</button>
             <!-- 수정: 인물리터칭 버튼 클릭 시 전용 페이지로 이동 -->
             <button class="cat-btn" onclick="location.href='project-retouching.html'">인물 리터칭</button>
@@ -244,6 +244,27 @@
                 <h4 class="project-title mb-1 text-left">폼폼팩토리 스스륵 매트리스 페이지 기획, 디자인</h4>
                 <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Figma ,ChatGPT</p>
                 <p class="category-text text-left">상세페이지작업, 상품기획</p>
+            </div>
+
+
+            <div class="project-card group cursor-pointer" data-category="상세페이지" onclick="location.href='Product-page_wokr5.html'">
+                <div class="relative rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                    <img src="images/Product-page_wokr7_4.jpg" class="w-full h-full object-cover">
+                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
+                </div>
+                <h4 class="project-title mb-1 text-left">바닐라슈 펌프스 촬영기획 및 상세페이지 작업</h4>
+                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Photoshop</p>
+                <p class="category-text text-left">상품기획, 페이지작업, 촬영기획</p>
+            </div>
+
+            <div class="project-card group cursor-pointer" data-category="상세페이지" onclick="location.href='Product-page_wokr4.html'">
+                <div class="relative rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                    <img src="images/Product-page_wokr6_4.jpg" class="w-full h-full object-cover">
+                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
+                </div>
+                <h4 class="project-title mb-1 text-left">조이유 상세페이지 작업</h4>
+                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Photoshop</p>
+                <p class="category-text text-left">상세페이지작업, 모델리터칭</p>
             </div>
 
             <div class="project-card group cursor-pointer" data-category="AI비주얼" onclick="location.href='project-AI Visual-2.html'">
