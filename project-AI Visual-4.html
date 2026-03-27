@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail | LEE HYUN NA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body { font-family: 'Pretendard', sans-serif; background-color: #f9f9f9; color: #1a1a1a; }
+        .tag { background: #eee; padding: 4px 12px; border-radius: 4px; font-size: 11px; color: #666; font-weight: 600; }
+        .content-media { width: 100%; border-radius: 24px; overflow: hidden; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        
+        /* 💡 줄바꿈을 위한 스타일: 엔터 친 대로 화면에 표시됩니다 */
+        .desc-text { 
+            white-space: pre-wrap; 
+            word-break: keep-all; 
+        }
+
+        /* 💡 모바일 글씨 밀림 및 겹침 방지 최적화 */
+        .project-title {
+            /* 모바일에서 글자가 너무 커서 밀리지 않도록 유연한 크기 적용 */
+            font-size: clamp(1.8rem, 6vw, 2.5rem); 
+            line-height: 1.2;
+            word-break: keep-all;
+        }
+
+        /* 모바일 정보 그리드 레이아웃 최적화 */
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr) !important; /* 5열에서 2열로 변경 */
+                gap: 2rem 1rem !important;
+            }
+        }
+
+        /* 덜컥거림 방지 */
+        html { overflow-y: scroll; }
+        body { min-height: 101vh; }
+    </style>
+</head>
+<body>
+
+    <nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto w-full">
+        <div class="font-bold text-lg uppercase cursor-pointer" onclick="location.href='index.html'">LEE HYUN NA</div>
+        <div class="space-x-8 text-xs text-gray-400 uppercase tracking-widest">
+            <a href="portfolio.html">Close Project ✕</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 md:py-20">
+        <p class="text-sm text-gray-600 font-bold mb-4 text-left">AI 비주얼 / AI 이미지 생성 / 이미지 합성 / 룩북 제작</p>
+        
+        <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-12">
+            <h1 class="project-title font-bold text-left">AI 패션 모델 기반 룩북 콘텐츠 제작</h1>
+            <div class="flex flex-wrap gap-2">
+                <span class="tag">Midjourney</span>
+                <span class="tag">Freepik</span>
+                <span class="tag">Photoshop</span>
+		<span class="tag">ChatGPT</span>
+            </div>
+        </div>
+
+        <h3 class="font-bold mb-8 border-b pb-4 text-left">프로젝트 정보</h3>
+        <div class="grid grid-cols-5 gap-4 mb-20 text-center info-grid">
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">역할</p>
+                <p class="text-xs font-bold text-gray-600"  style="font-size: 0.9em;">AI 비주얼 기획</p>
+		<p class="text-xs font-bold text-gray-600"  style="font-size: 0.9em;">AI 기반 콘텐츠 기획</p>
+		<p class="text-xs font-bold text-gray-600"  style="font-size: 0.9em;">이미지 합성 및 연출</p>
+		<p class="text-xs font-bold text-gray-600"  style="font-size: 0.9em;">광고 비주얼 제작</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">연도</p>
+                <p class="text-xs font-bold text-gray-600"  style="font-size: 0.9em;">2026</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">유형</p>
+                <p class="text-xs font-bold text-gray-600"  style="font-size: 0.9em;">개인프로젝트</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">분야</p>
+                <p class="text-xs font-bold text-gray-600"  style="font-size: 0.9em;">AI 비주얼 / 이미지 합성</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">기여도</p>
+                <p class="text-xs font-bold text-gray-600"  style="font-size: 0.9em;">100%</p>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">01</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">프로젝트 개요</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">촬영 없이도 활용 가능한 패션 콘텐츠를 제작하기 위해 AI 모델 생성과 상품 이미지를 결합한 룩북 이미지를 기획하고 제작했습니다.
+
+단순 합성에 그치지 않고, 실제 쇼핑몰에서 활용 가능한 수준의 구도, 스타일링, 컷 구성을 고려하여 작업을 진행하였고 모델의 일관성을 유지하는것을 중요한 목표로 생각했습니다.
+모델 생성부터 착장 이미지 제작, 룩북 컷 구성까지 전 과정을 직접 기획하여 작업했습니다.</p>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">02</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">프로젝트 완성</h4>
+                <div class="space-y-6">
+                    <h2 class="font-bold mb-4 text-center w-full text-lg">< 모델생성 및 활용 상품컷 ></h2>            
+                    <img src="images/AI-Visual_wokr4_1.jpg" alt="결과물1" class="content-media">
+                    <h2 class="font-bold mb-4 text-center w-full text-lg">< AI 모델 합성컷 제작 ></h2>   
+                    <img src="images/AI-Visual_wokr4_2.jpeg" alt="결과물1" class="content-media">
+                    <h2 class="font-bold mb-4 text-center w-full text-lg">< 룩북 제작 ></h2>  
+                    <img src="images/AI-Visual_wokr4_3.jpeg" alt="결과물1" class="content-media">
+                </div>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">03</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">주요작업</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">1. AI 기반 패션 모델 이미지 생성 (Midjourney 활용)
+2. 제품 이미지(자켓, 스커트, 가방) 선정 및 스타일링 기획
+3. 모델과 제품의 자연스러운 착장 합성 작업
+4. 쇼핑몰 활용을 고려한 룩북 컷 구성 기획 (전신 / 워킹 / 측면 / 후면)
+5. 전체 이미지 톤 & 무드 디렉팅 (미니멀 / 뉴트럴 톤)
+</p>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">04</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">결과물 특징</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">1. 실제 촬영 없이 제작된 룩북 이미지 구성
+2. 브랜드 촬영과 유사한 자연스러운 조명과 톤 구현
+3. 다양한 포즈와 구도를 통한 활용도 높은 콘텐츠 제작
+</p>
+            </div>
+        </div>
+
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">05</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">인사이트</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed">촬영 없이도 AI를 활용해 상업용 콘텐츠를 제작할 수 있는 가능성을 확인했습니다.
+특히 모델 섭외, 촬영 등의 비용 없이도 일관된 퀄리티의 이미지를 빠르게 제작할 수 있다는 점에서 효율성을 확보할 수 있었습니다.
+
+앞으로는 디테일 표현과 제품 정확도를 더욱 개선하여 실제 커머스 환경에서도 활용 가능한 수준으로 확장할 수 있을 것 같습니다</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white pt-24 pb-12 px-6 md:px-12 border-t border-gray-100 w-full shrink-0">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 text-left">
+            <div class="max-w-sm">
+                <h4 class="font-bold text-lg mb-4 text-left">Hyunna Lee</h4>
+                <p class="text-sm text-gray-500 leading-relaxed text-left">브랜드와 커머스를 연결하는 사려 깊은 디자인 경험을 제공합니다.</p>
+            </div>
+            <div class="flex gap-24">
+                <div class="text-left">
+                    <h5 class="text-[11px] font-bold text-gray-400 uppercase mb-6 tracking-[0.2em]">소셜</h5>
+                    <ul class="text-[13px] space-y-3 font-medium">
+                        <li><a href="#" class="hover:underline">인스타그램</a></li>
+                        <li><a href="mailto:gs9266123@gmail.com" class="hover:underline">이메일</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-24 text-[10px] text-gray-400 uppercase tracking-widest text-left">
+            © 2026 Hyunna Lee. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
