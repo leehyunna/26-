@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail | LEE HYUN NA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body { font-family: 'Pretendard', sans-serif; background-color: #f9f9f9; color: #1a1a1a; }
+        .tag { background: #eee; padding: 4px 12px; border-radius: 4px; font-size: 11px; color: #666; font-weight: 600; }
+        .content-media { width: 100%; border-radius: 24px; overflow: hidden; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        
+        /* 💡 줄바꿈을 위한 스타일: 엔터 친 대로 화면에 표시됩니다 */
+        .desc-text { 
+            white-space: pre-wrap; 
+            word-break: keep-all; 
+        }
+
+        /* 💡 모바일 글씨 밀림 및 겹침 방지 최적화 */
+        .project-title {
+            /* 모바일에서 글자가 너무 커서 밀리지 않도록 유연한 크기 적용 */
+            font-size: clamp(1.8rem, 6vw, 2.5rem); 
+            line-height: 1.2;
+            word-break: keep-all;
+        }
+
+        /* 모바일 정보 그리드 레이아웃 최적화 */
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr) !important; /* 5열에서 2열로 변경 */
+                gap: 2rem 1rem !important;
+            }
+        }
+
+        /* 덜컥거림 방지 */
+        html { overflow-y: scroll; }
+        body { min-height: 101vh; }
+    </style>
+</head>
+<body>
+
+    <nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto w-full">
+        <div class="font-bold text-lg uppercase cursor-pointer" onclick="location.href='index.html'">LEE HYUN NA</div>
+        <div class="space-x-8 text-xs text-gray-400 uppercase tracking-widest">
+            <a href="portfolio.html">Close Project ✕</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 md:py-20">
+        <p class="text-sm text-gray-600 font-bold mb-4 text-left">카드뉴스 템플릿 기획</p>
+        <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-12">
+            <h1 class="project-title font-bold text-left">구글시트 연동 카드뉴스 자동화 디자인 시스템 구축</h1>
+            <div class="flex flex-wrap gap-2">
+                <span class="tag">Figma</span>
+		<span class="tag">Google Sheets</span>
+            </div>
+        </div>
+
+        <h3 class="font-bold mb-8 border-b pb-4 text-left">프로젝트 정보</h3>
+        <div class="grid grid-cols-5 gap-4 mb-20 text-center info-grid">
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">역할</p>
+                <p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">자동화 구조 기획</p>
+		<p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">카드뉴스 템플릿 디자인</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">연도</p>
+                <p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">2025</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">유형</p>
+                <p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">개인프로젝트</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">분야</p>
+                <p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">배너, 카드뉴스</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">기여도</p>
+                <p class="text-xs font-bold text-gray-600" style="font-size: 0.9em;">100%</p>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">01</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">프로젝트 개요</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">피그마와 Google Sheets Sync 플러그인을 활용하여 상품 정보를 기반으로 카드뉴스 콘텐츠를 자동 생성할 수 있도록 작업했습니다.
+
+반복적으로 발생하는 상품 콘텐츠 제작 과정에서 데이터 입력만으로 디자인이 반영되도록 하여 작업 효율성과 콘텐츠 일관성을 동시에 개선하는 데 목적을 두었습니다.</p>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">02</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">프로젝트 완성</h4>
+                <div class="space-y-6">
+	             <h2 class="font-bold mb-4 text-center w-full text-2xl">< 템플릿 생성 ></h2>
+                    <img src="images/Banner_work5_1.png" alt="결과물1" class="content-media">
+			<br>
+	             <h2 class="font-bold mb-4 text-center w-full text-2xl">< 자동화 완료 ></h2>
+                    <img src="images/Banner_work5_2.png" alt="결과물1" class="content-media">
+
+	             <h2 class="font-bold mb-4 text-center w-full text-2xl">< 결과물 ></h2>
+			<img src="images/Banner_work5_3.jpg" alt="결과물1" class="content-media">
+			<img src="images/Banner_work5_4.jpg" alt="결과물1" class="content-media">
+			<img src="images/Banner_work5_5.jpg" alt="결과물1" class="content-media">
+			<img src="images/Banner_work5_6.jpg" alt="결과물1" class="content-media">
+                </div>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">03</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">주요작업</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">1. Google Sheets 기반 콘텐츠 데이터 구조 설계 (상품명, 사이즈, 문구 등)
+2. 피그마 플러그인을 활용한 데이터 연동
+3. 피그마 오토레이아웃 기반 카드뉴스 템플릿 제작
+4. 데이터 수정 시 디자인이 자동 반영되는 구조 설계
+</p>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">05</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">인사이트</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed">이커머스 콘텐츠는 반복 생산되는 특성이 강하기 때문에 디자인 결과물도 중요하지만 반복되는 작업의 경우 효율성을 극대화 시키는 업무 구조를 설계하는 것이 더 중요하다고 판단했습니다.
+
+Google Sheets와 피그마를 연동함으로써 단순 반복 작업을 줄이고, 작업 시간 단축과 디자인 일관성을 동시에 확보할 수 있었습니다.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white pt-24 pb-12 px-6 md:px-12 border-t border-gray-100 w-full shrink-0">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 text-left">
+            <div class="max-w-sm">
+                <h4 class="font-bold text-lg mb-4 text-left">Hyunna Lee</h4>
+                <p class="text-sm text-gray-500 leading-relaxed text-left">브랜드와 커머스를 연결하는 사려 깊은 디자인 경험을 제공합니다.</p>
+            </div>
+            <div class="flex gap-24">
+                <div class="text-left">
+                    <h5 class="text-[11px] font-bold text-gray-400 uppercase mb-6 tracking-[0.2em]">소셜</h5>
+                    <ul class="text-[13px] space-y-3 font-medium">
+                        <li><a href="#" class="hover:underline">인스타그램</a></li>
+                        <li><a href="mailto:gs9266123@gmail.com" class="hover:underline">이메일</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-24 text-[10px] text-gray-400 uppercase tracking-widest text-left">
+            © 2026 Hyunna Lee. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
