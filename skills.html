@@ -9,10 +9,12 @@
         @import url('https://fonts.googleapis.com/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
         body { font-family: 'Pretendard', sans-serif; background-color: #f9f9f9; color: #1a1a1a; }
         
-        .nav-item { font-size: 13px; color: #666; transition: 0.3s; }
-        .nav-item:hover { color: #000; }
+        /* [메인 페이지와 통일된 네비게이션 스타일] */
+        .nav-item-top { font-size: 12px; font-weight: 700; color: #9ca3af; transition: 0.3s; text-transform: uppercase; letter-spacing: 0.1em; }
+        .nav-item-top:hover { color: #000; }
+        .nav-item-top.active { color: #000; border-bottom: 1px solid #000; padding-bottom: 4px; }
 
-        /* 기술 카드 스타일 */
+        /* [기존 기술 카드 디자인 100% 유지] */
         .skill-card {
             background: white;
             border-radius: 16px;
@@ -25,14 +27,11 @@
             border: 1px solid #eee;
             min-height: 110px;
         }
-
         .skill-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 24px rgba(0,0,0,0.08);
             border-color: #ddd;
         }
-
-        /* 아이콘 정렬 및 크기 고정 */
         .skill-icon-wrapper {
             width: 44px;
             height: 44px;
@@ -41,7 +40,6 @@
             justify-content: center;
             flex-shrink: 0;
         }
-
         .skill-icon {
             width: 100%;
             height: 100%;
@@ -51,32 +49,32 @@
 </head>
 <body class="flex flex-col min-h-screen">
 
-<nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto w-full">
-    <div class="font-bold text-lg tracking-tighter uppercase cursor-pointer" onclick="location.href='index.html'">
-        LEE HYUN NA
+<nav class="flex justify-between items-center px-6 py-10 md:px-12 max-w-7xl mx-auto w-full bg-transparent">
+    <div class="font-bold text-xl tracking-tighter uppercase cursor-pointer" onclick="location.href='index.html'">
+        HYUNNA LEE
     </div>
-    <div class="hidden md:flex space-x-8">
-        <a href="index.html" class="nav-item">홈</a>
-        <a href="about.html" class="nav-item">소개</a>
-        <a href="portfolio.html" class="nav-item">포트폴리오</a>
-        <a href="skills.html" class="nav-item font-bold text-black border-b border-black pb-1">skills</a>
-        <a href="contact.html" class="nav-item">연락처</a>
+    
+    <div class="hidden md:flex space-x-8 items-center">
+        <a href="index.html" class="nav-item-top">HOME</a>
+        <a href="about.html" class="nav-item-top">ABOUT</a>
+        <a href="portfolio.html" class="nav-item-top">PORTFOLIO</a>
+        <a href="skills.html" class="nav-item-top active">SKILLS</a>
+        <a href="contact.html" class="nav-item-top">CONTACT</a>
     </div>
 </nav>
 
-<div class="md:hidden flex justify-center space-x-6 pb-6 border-b border-gray-100 overflow-x-auto whitespace-nowrap px-6">
-    <a href="index.html" class="text-xs text-gray-400">홈</a>
-    <a href="about.html" class="text-xs text-gray-400">소개</a>
-    <a href="portfolio.html" class="text-xs text-gray-400">포트폴리오</a>
-    <a href="skills.html" class="text-xs font-bold text-black border-b-2 border-black pb-1">skills</a>
-    <a href="contact.html" class="text-xs text-gray-400">연락처</a>
+<div class="md:hidden flex justify-center space-x-6 pb-6 border-b border-gray-100 overflow-x-auto whitespace-nowrap px-6 mb-10">
+    <a href="index.html" class="text-xs font-bold text-gray-400 uppercase">HOME</a>
+    <a href="about.html" class="text-xs font-bold text-gray-400 uppercase">ABOUT</a>
+    <a href="portfolio.html" class="text-xs font-bold text-gray-400 uppercase">PORTFOLIO</a>
+    <a href="skills.html" class="text-xs font-bold text-black border-b-2 border-black pb-1 uppercase">SKILLS</a>
+    <a href="contact.html" class="text-xs font-bold text-gray-400 uppercase">CONTACT</a>
 </div>
 
 <main class="max-w-7xl mx-auto px-6 md:px-12 pt-12 md:pt-20 pb-40 flex-grow w-full">
     <h1 class="text-4xl md:text-5xl font-bold mb-12 md:mb-20 tracking-tight text-left">기술 역량</h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
         <div class="skill-card">
             <div class="skill-icon-wrapper">
                 <img src="images/icon_illustrator.png" alt="Illustrator" class="skill-icon">
@@ -209,7 +207,7 @@
 
         <div class="skill-card">
             <div class="skill-icon-wrapper">
-                <img src="images/icon_notion.png" alt="Freepik" class="skill-icon">
+                <img src="images/icon_notion.png" alt="Notion" class="skill-icon">
             </div>
             <div class="text-left">
                 <h4 class="font-bold text-lg">Notion</h4>
@@ -218,29 +216,27 @@
         </div>
     </div>
 </main>
-
-    <footer class="bg-white pt-24 pb-12 px-6 md:px-12 border-t border-gray-100 w-full shrink-0">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 text-left">
-            <div class="max-w-sm">
-                <h4 class="font-bold text-lg mb-4 text-left">Hyunna Lee</h4>
-                <p class="text-sm text-gray-500 leading-relaxed text-left">
-                    디자인을 넘어, 더 나은 결과를 만들어갑니다.
-                </p>
-            </div>
-            <div class="flex gap-24">
-                <div class="text-left">
-                    <h5 class="text-[11px] font-bold text-gray-400 uppercase mb-6 tracking-[0.2em]">소셜</h5>
-                    <ul class="text-[13px] space-y-3 font-medium">
-                        <li><a href="https://www.instagram.com/hyun_na_2/" class="hover:underline flex items-center gap-2">인스타그램</a></li>
-                        <li><a href="mailto:gs9266123@gmail.com" class="hover:underline flex items-center gap-2">이메일</a></li>
-                    </ul>
-                </div>
+<footer class="border-t border-gray-100 pt-24 pb-12 px-6 md:px-12 bg-white w-full shrink-0">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 text-left">
+        <div class="max-w-sm">
+            <h4 class="font-bold text-xl mb-4">HYUNNA LEE</h4>
+            <p class="text-sm text-gray-500 leading-relaxed">
+                디자인을 넘어, 더 나은 결과를 만들어갑니다.
+            </p>
+        </div>
+        <div class="flex gap-24">
+            <div class="text-left">
+                <h5 class="text-[11px] font-bold text-gray-400 uppercase mb-6 tracking-[0.2em]">Contact</h5>
+                <ul class="text-[13px] space-y-3 font-medium">
+                    <li><a href="mailto:gs9266123@gmail.com" class="hover:underline">gs9266123@gmail.com</a></li>
+                </ul>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-24 text-[10px] text-gray-400 uppercase tracking-widest text-left">
-            © 2026 Hyunna Lee. All rights reserved.
-        </div>
-    </footer>
+    </div>
+    <div class="max-w-7xl mx-auto mt-24 text-[10px] text-gray-400 uppercase tracking-widest text-left">
+        © 2026 HYUNNA LEE. ALL RIGHTS RESERVED.
+    </div>
+</footer>
 
 </body>
 </html>

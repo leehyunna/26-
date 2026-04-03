@@ -10,23 +10,24 @@
         html { overflow-y: scroll; }
         body { font-family: 'Pretendard', sans-serif; background-color: #f9f9f9; color: #1a1a1a; min-height: 101vh; overflow-x: hidden; }
         
-        /* 카테고리 버튼 */
+        /* [메인 페이지와 통일된 네비게이션 스타일] */
+        .nav-item-top { font-size: 12px; font-weight: 700; color: #9ca3af; transition: 0.3s; text-transform: uppercase; letter-spacing: 0.1em; }
+        .nav-item-top:hover { color: #000; }
+        .nav-item-top.active { color: #000; border-bottom: 1px solid #000; padding-bottom: 4px; }
+
+        /* [기존 포트폴리오 디자인 유지] */
         .cat-btn { padding: 10px 24px; border-radius: 50px; font-size: 13px; font-weight: 600; background: #eee; color: #888; transition: 0.3s; }
         .cat-btn.active, .cat-btn:hover { background: #111; color: #fff; }
 
-        /* 카드 오버레이 */
         .project-card .overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s; backdrop-filter: blur(4px); z-index: 10; }
         .project-card:hover .overlay { opacity: 1; }
         
         .view-btn { border: 1px solid #fff; color: #fff; padding: 10px 24px; border-radius: 50px; font-size: 14px; }
-        .nav-item { font-size: 13px; color: #666; transition: 0.3s; }
-        .nav-item:hover { color: #000; }
 
         .project-title { font-size: 20px; font-weight: 800; color: #000; line-height: 1.4; }
         .tool-text { font-size: 12px; color: #4b5563; line-height: 1.6; }
         .category-text { font-size: 12px; color: #9ca3af; line-height: 1.6; }
 
-        /* 유튜브 UI 최적화 */
         .video-container { position: relative; width: 100%; height: 100%; overflow: hidden; background: #000; pointer-events: none; }
         .video-container iframe { 
             position: absolute; 
@@ -40,468 +41,451 @@
 </head>
 <body class="flex flex-col min-h-screen">
 
-    <nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto w-full">
-        <div class="font-bold text-lg tracking-tighter uppercase cursor-pointer" onclick="location.href='index.html'">LEE HYUN NA</div>
+<nav class="flex justify-between items-center px-6 py-10 md:px-12 max-w-7xl mx-auto w-full bg-transparent">
+    <div class="font-bold text-xl tracking-tighter uppercase cursor-pointer" onclick="location.href='index.html'">
+        HYUNNA LEE
+    </div>
+    
+    <div class="hidden md:flex space-x-8 items-center">
+        <a href="index.html" class="nav-item-top">HOME</a>
+        <a href="about.html" class="nav-item-top">ABOUT</a>
         
-        <div class="hidden md:flex space-x-8 items-center relative">
-            <a href="index.html" class="nav-item">홈</a>
-            <a href="about.html" class="nav-item">소개</a>
-            
-            <div class="relative group cursor-pointer">
-                <a href="portfolio.html" class="nav-item font-bold text-black border-b border-black pb-1 inline-block">포트폴리오</a>
-                
-                <div class="absolute left-1/2 -translate-x-1/2 top-full pt-2 hidden group-hover:flex flex-col items-center z-50 w-max">
-                    <div class="bg-white border border-gray-100 shadow-lg rounded-xl py-3 px-5 flex flex-col gap-3 w-full">
-                        <button onclick="goToPortfolio('all')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">전체보기</button>
-                        <button onclick="goToPortfolio('브랜딩')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">브랜딩</button>
-                        <button onclick="goToPortfolio('AI비주얼')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">AI비주얼</button>
-                        <button onclick="goToPortfolio('상세페이지')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">상세페이지</button>
-                        <button onclick="goToPortfolio('배너&카드뉴스')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">배너&카드뉴스</button>
-                        <button onclick="goToPortfolio('로고디자인')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">로고디자인</button>
-                        <!-- 수정: 인물리터칭 바로 이동 -->
-                        <button onclick="location.href='project-retouching.html'" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">인물 리터칭</button>
-                        <button onclick="goToPortfolio('영상')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">영상</button>
-                        <button onclick="goToPortfolio('촬영')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">촬영</button>
-                        <button onclick="goToPortfolio('UX/UI')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">UX/UI</button>
-                    </div>
+        <div class="relative group cursor-pointer">
+            <a href="portfolio.html" class="nav-item-top active">PORTFOLIO</a>
+            <div class="absolute left-1/2 -translate-x-1/2 top-full pt-2 hidden group-hover:flex flex-col items-center z-50 w-max">
+                <div class="bg-white border border-gray-100 shadow-lg rounded-xl py-3 px-5 flex flex-col gap-3 w-full">
+                    <button onclick="goToPortfolio('all')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">전체보기</button>
+                    <button onclick="goToPortfolio('브랜딩')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">브랜딩</button>
+                    <button onclick="goToPortfolio('AI비주얼')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">AI비주얼</button>
+                    <button onclick="goToPortfolio('상세페이지')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">상세페이지</button>
+                    <button onclick="goToPortfolio('배너&카드뉴스')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">배너&카드뉴스</button>
+                    <button onclick="goToPortfolio('로고디자인')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">로고디자인</button>
+                    <button onclick="location.href='project-retouching.html'" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">인물 리터칭</button>
+                    <button onclick="goToPortfolio('영상')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">영상</button>
+                    <button onclick="goToPortfolio('촬영')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">촬영</button>
+                    <button onclick="goToPortfolio('UX/UI')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">UX/UI</button>
                 </div>
             </div>
-            
-            <a href="skills.html" class="nav-item">skills</a>
-            <a href="contact.html" class="nav-item">연락처</a>
-        </div>
-    </nav>
-
-    <div class="md:hidden flex justify-center space-x-6 pb-6 border-b border-gray-100 overflow-x-auto whitespace-nowrap px-6">
-        <a href="index.html" class="text-xs text-gray-400">홈</a>
-        <a href="about.html" class="text-xs text-gray-400">소개</a>
-        <button type="button" id="mobile-portfolio-btn" onclick="toggleMobileMenu(event)" class="text-xs font-bold text-black border-b-2 border-black pb-1 touch-manipulation cursor-pointer">포트폴리오</button>
-        <a href="skills.html" class="text-xs text-gray-400">skills</a>
-        <a href="contact.html" class="text-xs text-gray-400">연락처</a>
-    </div>
-
-    <div id="mobile-submenu" style="display: none;" class="md:hidden flex justify-start space-x-5 py-3 bg-gray-50 border-b border-gray-100 overflow-x-auto whitespace-nowrap px-6 transition-opacity">
-        <button onclick="goToPortfolio('all')" class="text-xs text-gray-500 hover:text-black shrink-0">전체보기</button>
-        <button onclick="goToPortfolio('브랜딩')" class="text-xs text-gray-500 hover:text-black shrink-0">브랜딩</button>
-        <button onclick="goToPortfolio('AI비주얼')" class="text-xs text-gray-500 hover:text-black shrink-0">AI비주얼</button>
-        <button onclick="goToPortfolio('상세페이지')" class="text-xs text-gray-500 hover:text-black shrink-0">상세페이지</button>
-        <button onclick="goToPortfolio('배너&카드뉴스')" class="text-xs text-gray-500 hover:text-black shrink-0">배너&카드뉴스</button>
-        <button onclick="goToPortfolio('로고디자인')" class="text-xs text-gray-500 hover:text-black shrink-0">로고디자인</button>
-        <!-- 수정: 인물리터칭 바로 이동 -->
-        <button onclick="location.href='project-retouching.html'" class="text-xs text-gray-500 hover:text-black shrink-0">인물 리터칭</button>
-        <button onclick="goToPortfolio('영상')" class="text-xs text-gray-500 hover:text-black shrink-0">영상</button>
-        <button onclick="goToPortfolio('촬영')" class="text-xs text-gray-500 hover:text-black shrink-0">촬영</button>
-        <button onclick="goToPortfolio('UX/UI')" class="text-xs text-gray-500 hover:text-black shrink-0">UX/UI</button>
-    </div>
-
-    <main class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-12 md:pt-16 pb-32 flex-grow">
-        <h1 class="text-4xl font-bold mb-12 text-left">포트폴리오</h1>
-        <h2 class="font-bold mb-4 text-center w-full text-lg">영상이 포함되어 있어 로딩이 지연될 수 있습니다. 표시되지 않을 경우 새로고침 후 잠시 기다려 주세요!</h2>
-
-        <div class="flex flex-wrap justify-start md:justify-center gap-3 mb-16" id="category-container">
-            <button class="cat-btn active" onclick="filterProjects('all')">전체</button>
-            <button class="cat-btn" onclick="filterProjects('브랜딩')">브랜딩</button>
-            <button class="cat-btn" onclick="filterProjects('AI비주얼')">AI비주얼</button>
-            <button class="cat-btn" onclick="filterProjects('상세페이지')">상세페이지</button>
-            <button class="cat-btn" onclick="filterProjects('배너&카드뉴스')">배너&카드뉴스</button>
-            <button class="cat-btn" onclick="filterProjects('로고디자인')">로고디자인</button>
-            <!-- 수정: 인물리터칭 버튼 클릭 시 전용 페이지로 이동 -->
-            <button class="cat-btn" onclick="location.href='project-retouching.html'">인물 리터칭</button>
-            <button class="cat-btn" onclick="filterProjects('영상')">영상</button>
-            <button class="cat-btn" onclick="filterProjects('촬영')">촬영</button>
-            <button class="cat-btn" onclick="filterProjects('UX/UI')">UX/UI</button>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="project-grid">
-            
-            <div class="project-card group cursor-pointer" data-category="브랜딩" onclick="location.href='project-detail-branding.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/branding_work_1_5.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">오설록</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Figma, CapCut, Freepik, Midjourney, Photoshop</p>
-                <p class="category-text text-left">브랜딩, 비주얼 콘텐츠, 영상</p>
+        <a href="skills.html" class="nav-item-top">SKILLS</a>
+        <a href="contact.html" class="nav-item-top">CONTACT</a>
+    </div>
+</nav>
+
+<div class="md:hidden flex justify-center space-x-6 pb-6 border-b border-gray-100 overflow-x-auto whitespace-nowrap px-6 mb-4">
+    <a href="index.html" class="text-xs font-bold text-gray-400 uppercase">HOME</a>
+    <a href="about.html" class="text-xs font-bold text-gray-400 uppercase">ABOUT</a>
+    <button type="button" id="mobile-portfolio-btn" onclick="toggleMobileMenu(event)" class="text-xs font-bold text-black border-b-2 border-black pb-1 uppercase">PORTFOLIO</button>
+    <a href="skills.html" class="text-xs font-bold text-gray-400 uppercase">SKILLS</a>
+    <a href="contact.html" class="text-xs font-bold text-gray-400 uppercase">CONTACT</a>
+</div>
+
+<div id="mobile-submenu" style="display: none;" class="md:hidden flex justify-start space-x-5 py-3 bg-gray-50 border-b border-gray-100 overflow-x-auto whitespace-nowrap px-6 mb-8 transition-opacity">
+    <button onclick="goToPortfolio('all')" class="text-xs text-gray-500 hover:text-black shrink-0">전체보기</button>
+    <button onclick="goToPortfolio('브랜딩')" class="text-xs text-gray-500 hover:text-black shrink-0">브랜딩</button>
+    <button onclick="goToPortfolio('AI비주얼')" class="text-xs text-gray-500 hover:text-black shrink-0">AI비주얼</button>
+    <button onclick="goToPortfolio('상세페이지')" class="text-xs text-gray-500 hover:text-black shrink-0">상세페이지</button>
+    <button onclick="goToPortfolio('배너&카드뉴스')" class="text-xs text-gray-500 hover:text-black shrink-0">배너&카드뉴스</button>
+    <button onclick="goToPortfolio('로고디자인')" class="text-xs text-gray-500 hover:text-black shrink-0">로고디자인</button>
+    <button onclick="location.href='project-retouching.html'" class="text-xs text-gray-500 hover:text-black shrink-0">인물 리터칭</button>
+    <button onclick="goToPortfolio('영상')" class="text-xs text-gray-500 hover:text-black shrink-0">영상</button>
+    <button onclick="goToPortfolio('촬영')" class="text-xs text-gray-500 hover:text-black shrink-0">촬영</button>
+    <button onclick="goToPortfolio('UX/UI')" class="text-xs text-gray-500 hover:text-black shrink-0">UX/UI</button>
+</div>
+
+<main class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-12 md:pt-16 pb-32 flex-grow">
+    <h1 class="text-4xl font-bold mb-12 text-left">포트폴리오</h1>
+    <h2 class="font-bold mb-4 text-center w-full text-lg">영상이 포함되어 있어 로딩이 지연될 수 있습니다. 표시되지 않을 경우 새로고침 후 잠시 기다려 주세요!</h2>
+
+    <div class="flex flex-wrap justify-start md:justify-center gap-3 mb-16" id="category-container">
+        <button class="cat-btn active" onclick="filterProjects('all')">전체</button>
+        <button class="cat-btn" onclick="filterProjects('브랜딩')">브랜딩</button>
+        <button class="cat-btn" onclick="filterProjects('AI비주얼')">AI비주얼</button>
+        <button class="cat-btn" onclick="filterProjects('상세페이지')">상세페이지</button>
+        <button class="cat-btn" onclick="filterProjects('배너&카드뉴스')">배너&카드뉴스</button>
+        <button class="cat-btn" onclick="filterProjects('로고디자인')">로고디자인</button>
+        <button class="cat-btn" onclick="location.href='project-retouching.html'">인물 리터칭</button>
+        <button class="cat-btn" onclick="filterProjects('영상')">영상</button>
+        <button class="cat-btn" onclick="filterProjects('촬영')">촬영</button>
+        <button class="cat-btn" onclick="filterProjects('UX/UI')">UX/UI</button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="project-grid">
+        
+        <div class="project-card group cursor-pointer" data-category="브랜딩" onclick="location.href='project-detail-branding.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/branding_work_1_5.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">오설록</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Figma, CapCut, Freepik, Midjourney, Photoshop</p>
+            <p class="category-text text-left">브랜딩, 비주얼 콘텐츠, 영상</p>
+        </div>
 
-            <div class="project-card group cursor-pointer" data-category="브랜딩" onclick="location.href='project-detail-branding2.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/branding_work_2_11.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">AI 기반 뷰티 브랜드 기획 및 비주얼 디자인</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Freepik, Midjourney, Photoshop, ChatGPT, Illustrator</p>
-                <p class="category-text text-left">브랜딩, 뷰티 비주얼 디자인, AI 비주얼</p>
+        <div class="project-card group cursor-pointer" data-category="브랜딩" onclick="location.href='project-detail-branding2.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/branding_work_2_11.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">AI 기반 뷰티 브랜드 기획 및 비주얼 디자인</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Freepik, Midjourney, Photoshop, ChatGPT, Illustrator</p>
+            <p class="category-text text-left">브랜딩, 뷰티 비주얼 디자인, AI 비주얼</p>
+        </div>
 
-            <div class="project-card group cursor-pointer" data-category="배너&카드뉴스" onclick="location.href='project-Banner-1.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/Banner_work1_6.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">토리든 퍼포먼스 배너 세트 기획</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Illustrator, Midjourney, Photoshop, Figma, Freepik</p>
-                <p class="category-text text-left">배너, 비주얼 콘텐츠, 브랜딩</p>
+        <div class="project-card group cursor-pointer" data-category="배너&카드뉴스" onclick="location.href='project-Banner-1.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/Banner_work1_6.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">토리든 퍼포먼스 배너 세트 기획</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Illustrator, Midjourney, Photoshop, Figma, Freepik</p>
+            <p class="category-text text-left">배너, 비주얼 콘텐츠, 브랜딩</p>
+        </div>
 
-            <div class="project-card group cursor-pointer" data-category="로고디자인" onclick="location.href='project-logo-3.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/logo_work3_3.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">다미온(DAMION) 한정식 브랜드 로고 디자인</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Illustrator, Photoshop, CapCut, Freepik</p>
-                <p class="category-text text-left">브랜딩 / 로고디자인</p>
+        <div class="project-card group cursor-pointer" data-category="로고디자인" onclick="location.href='project-logo-3.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/logo_work3_3.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">다미온(DAMION) 한정식 브랜드 로고 디자인</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Illustrator, Photoshop, CapCut, Freepik</p>
+            <p class="category-text text-left">브랜딩 / 로고디자인</p>
+        </div>
 
-            <div class="project-card group cursor-pointer" data-category="AI비주얼" onclick="location.href='project-AI Visual-1.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/sro-NvT5mTo?autoplay=1&mute=1&loop=1&playlist=sro-NvT5mTo&controls=0&modestbranding=1&rel=0&iv_load_policy=3" frameborder="0" allow="autoplay; encrypted-media"></iframe>
-                    </div>
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
+        <div class="project-card group cursor-pointer" data-category="AI비주얼" onclick="location.href='project-AI Visual-1.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/sro-NvT5mTo?autoplay=1&mute=1&loop=1&playlist=sro-NvT5mTo&controls=0&modestbranding=1&rel=0&iv_load_policy=3" frameborder="0" allow="autoplay; encrypted-media"></iframe>
                 </div>
-                <h4 class="project-title mb-1 text-left">Glow Lip Beauty Visual</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Midjourney, Photoshop, Freepik, CapCut</p>
-                <p class="category-text text-left">AI Visual 컨텐츠제작</p>
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">Glow Lip Beauty Visual</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Midjourney, Photoshop, Freepik, CapCut</p>
+            <p class="category-text text-left">AI Visual 컨텐츠제작</p>
+        </div>
 
-            <div class="project-card group cursor-pointer" data-category="AI비주얼" onclick="location.href='project-AI Visual-4.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/AI-Visual_wokr4_1.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">AI 패션 모델 기반 룩북 콘텐츠 제작</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Midjourney, Freepik, Photoshop, ChatGPT</p>
-                <p class="category-text text-left">AI 비주얼 / 이미지 합성</p>
+        <div class="project-card group cursor-pointer" data-category="AI비주얼" onclick="location.href='project-AI Visual-4.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/AI-Visual_wokr4_1.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">AI 패션 모델 기반 룩북 콘텐츠 제작</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Midjourney, Freepik, Photoshop, ChatGPT</p>
+            <p class="category-text text-left">AI 비주얼 / 이미지 합성</p>
+        </div>
 
-            <div class="project-card group cursor-pointer" data-category="로고디자인" onclick="location.href='project-logo-2.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/logo_work2_4.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">HELENA 로고 디자인</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Illustrator, Midjourney, Photoshop</p>
-                <p class="category-text text-left">로고 디자인</p>
+        <div class="project-card group cursor-pointer" data-category="로고디자인" onclick="location.href='project-logo-2.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/logo_work2_4.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">HELENA 로고 디자인</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Illustrator, Midjourney, Photoshop</p>
+            <p class="category-text text-left">로고 디자인</p>
+        </div>
 
-            <div class="project-card group cursor-pointer" data-category="배너&카드뉴스" onclick="location.href='project-Banner-2.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/Banner_work2_4.gif" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">규수방 베일리 매트리스 배너</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Photoshop, Figma</p>
-                <p class="category-text text-left">광고배너, 비주얼 콘텐츠</p>
+        <div class="project-card group cursor-pointer" data-category="배너&카드뉴스" onclick="location.href='project-Banner-2.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/Banner_work2_4.gif" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">규수방 베일리 매트리스 배너</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Photoshop, Figma</p>
+            <p class="category-text text-left">광고배너, 비주얼 콘텐츠</p>
+        </div>
 
-            <div class="project-card group cursor-pointer" data-category="배너&카드뉴스" onclick="location.href='project-Banner-5.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/Banner_work5_3.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">구글시트 연동 카드뉴스 자동화 디자인 시스템 구축</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span>Figma, Google Sheets</p>
-                <p class="category-text text-left">카드뉴스 템플릿 기획</p>
+        <div class="project-card group cursor-pointer" data-category="배너&카드뉴스" onclick="location.href='project-Banner-5.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/Banner_work5_3.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">구글시트 연동 카드뉴스 자동화 디자인 시스템 구축</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span>Figma, Google Sheets</p>
+            <p class="category-text text-left">카드뉴스 템플릿 기획</p>
+        </div>
 
-            <div class="project-card group cursor-pointer" data-category="로고디자인" onclick="location.href='project-logo-1.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/logo_work1_1.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">더케어 플러스 로고디자인</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Illustrator, Midjourney, Photoshop</p>
-                <p class="category-text text-left">로고 디자인</p>
+        <div class="project-card group cursor-pointer" data-category="로고디자인" onclick="location.href='project-logo-1.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/logo_work1_1.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">더케어 플러스 로고디자인</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Illustrator, Midjourney, Photoshop</p>
+            <p class="category-text text-left">로고 디자인</p>
+        </div>
 
-            <div class="project-card group cursor-pointer" data-category="AI비주얼" onclick="location.href='project-AI Visual-3.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/AI-Visual_wokr3_2.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">AI 활용 제품 비주얼 및 광고 이미지 제작</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Midjourney, Freepik, Photoshop</p>
-                <p class="category-text text-left">AI 비주얼 / AI 이미지 생성 / 이미지 합성 / 광고 비주얼 제작</p>
-            </div>     
-
+        <div class="project-card group cursor-pointer" data-category="AI비주얼" onclick="location.href='project-AI Visual-3.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/AI-Visual_wokr3_2.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
+            </div>
+            <h4 class="project-title mb-1 text-left">AI 활용 제품 비주얼 및 광고 이미지 제작</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Midjourney, Freepik, Photoshop</p>
+            <p class="category-text text-left">AI 비주얼 / AI 이미지 생성 / 이미지 합성 / 광고 비주얼 제작</p>
+        </div>     
 
         <div class="project-card group cursor-pointer" data-category="상세페이지" onclick="location.href='Product-page_wokr3.html'">
-                <div class="relative rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/Product-page_wokr5_0.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">폼폼팩토리 스스륵 매트리스 페이지 기획, 디자인</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Figma ,ChatGPT</p>
-                <p class="category-text text-left">상세페이지작업, 상품기획</p>
+            <div class="relative rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/Product-page_wokr5_0.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">폼폼팩토리 스스륵 매트리스 페이지 기획, 디자인</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Figma ,ChatGPT</p>
+            <p class="category-text text-left">상세페이지작업, 상품기획</p>
+        </div>
 
-            <div class="project-card group cursor-pointer" data-category="AI비주얼" onclick="location.href='project-AI Visual-5.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/AI-Visual_wokr5_1.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">AI 기반 쇼핑몰 패션 콘텐츠 제작</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Midjourney, Freepik, Photoshop, ChatGPT</p>
-                <p class="category-text text-left">AI 비주얼 / AI 이미지 생성 / 이미지 합성</p>
+        <div class="project-card group cursor-pointer" data-category="AI비주얼" onclick="location.href='project-AI Visual-5.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/AI-Visual_wokr5_1.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">AI 기반 쇼핑몰 패션 콘텐츠 제작</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Midjourney, Freepik, Photoshop, ChatGPT</p>
+            <p class="category-text text-left">AI 비주얼 / AI 이미지 생성 / 이미지 합성</p>
+        </div>
     
-		<div class="project-card group cursor-pointer md:col-span-2" data-category="영상" onclick="location.href='project-Video-1.html'">
-                <div class="relative aspect-video rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                     <img src="images/video_work_1.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">유튜브 콘텐츠 기획 및 영상 제작 프로젝트</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> CapCut, Photoshop</p>
-                <p class="category-text text-left">영상 기획 / 영상 촬영 / 영상 연출 / 콘텐츠 제작</p>
+        <div class="project-card group cursor-pointer md:col-span-2" data-category="영상" onclick="location.href='project-Video-1.html'">
+            <div class="relative aspect-video rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                 <img src="images/video_work_1.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">유튜브 콘텐츠 기획 및 영상 제작 프로젝트</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> CapCut, Photoshop</p>
+            <p class="category-text text-left">영상 기획 / 영상 촬영 / 영상 연출 / 콘텐츠 제작</p>
+        </div>
 
-            <div class="project-card group cursor-pointer" data-category="촬영" onclick="location.href='project-Photography-1.html'">
-                <div class="relative rounded-3xl overflow-hidden bg-gray-200 mb-6" style="aspect-ratio: 1 / 1.186;">
-                    <img src="images/Photography_work1_3.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">제품 촬영 디렉팅 및 광고 소재 촬영</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> DSLR</p>
-                <p class="category-text text-left">촬영 디렉팅 / 콘텐츠 제작 / 광고 비주얼</p>
+        <div class="project-card group cursor-pointer" data-category="촬영" onclick="location.href='project-Photography-1.html'">
+            <div class="relative rounded-3xl overflow-hidden bg-gray-200 mb-6" style="aspect-ratio: 1 / 1.186;">
+                <img src="images/Photography_work1_3.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">제품 촬영 디렉팅 및 광고 소재 촬영</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> DSLR</p>
+            <p class="category-text text-left">촬영 디렉팅 / 콘텐츠 제작 / 광고 비주얼</p>
+        </div>
 
-    
-
-            <div class="project-card group cursor-pointer" data-category="상세페이지" onclick="location.href='Product-page_wokr5.html'">
-                <div class="relative rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/Product-page_wokr7_4.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">바닐라슈 펌프스 촬영기획 및 상세페이지 작업</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Photoshop</p>
-                <p class="category-text text-left">상품기획, 페이지작업, 촬영기획</p>
+        <div class="project-card group cursor-pointer" data-category="상세페이지" onclick="location.href='Product-page_wokr5.html'">
+            <div class="relative rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/Product-page_wokr7_4.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">바닐라슈 펌프스 촬영기획 및 상세페이지 작업</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Photoshop</p>
+            <p class="category-text text-left">상품기획, 페이지작업, 촬영기획</p>
+        </div>
 
-            <div class="project-card group cursor-pointer" data-category="상세페이지" onclick="location.href='Product-page_wokr4.html'">
-                <div class="relative rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/Product-page_wokr6_4.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">조이유 상세페이지 작업</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Photoshop</p>
-                <p class="category-text text-left">상세페이지작업, 모델리터칭</p>
+        <div class="project-card group cursor-pointer" data-category="상세페이지" onclick="location.href='Product-page_wokr4.html'">
+            <div class="relative rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/Product-page_wokr6_4.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">조이유 상세페이지 작업</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Photoshop</p>
+            <p class="category-text text-left">상세페이지작업, 모델리터칭</p>
+        </div>
 
-            <div class="project-card group cursor-pointer" data-category="AI비주얼" onclick="location.href='project-AI Visual-2.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/rWT2iwm4oDs?autoplay=1&mute=1&loop=1&playlist=rWT2iwm4oDs&controls=0&modestbranding=1&rel=0&iv_load_policy=3" frameborder="0" allow="autoplay; encrypted-media"></iframe>
-                    </div>
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
+        <div class="project-card group cursor-pointer" data-category="AI비주얼" onclick="location.href='project-AI Visual-2.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/rWT2iwm4oDs?autoplay=1&mute=1&loop=1&playlist=rWT2iwm4oDs&controls=0&modestbranding=1&rel=0&iv_load_policy=3" frameborder="0" allow="autoplay; encrypted-media"></iframe>
                 </div>
-                <h4 class="project-title mb-1 text-left">AI 모델 생성 기반 영상 콘텐츠 제작</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Midjourney, Figma</p>
-                <p class="category-text text-left">AI 비주얼 / AI 이미지 생성 / AI 영상 제작</p>
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">AI 모델 생성 기반 영상 콘텐츠 제작</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Midjourney, Figma</p>
+            <p class="category-text text-left">AI 비주얼 / AI 이미지 생성 / AI 영상 제작</p>
+        </div>
 
-            <div class="project-card group cursor-pointer" data-category="배너&카드뉴스" onclick="location.href='project-Banner-4.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/Banner_work4_3.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
+        <div class="project-card group cursor-pointer" data-category="배너&카드뉴스" onclick="location.href='project-Banner-4.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/Banner_work4_3.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
+            </div>
+            <h4 class="project-title mb-1 text-left">유튜브 댓글 이벤트 프로모션 콘텐츠 디자인</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Photoshop</p>
+            <p class="category-text text-left">배너, 프로모션</p>
+        </div>
+
+        <div class="project-card group cursor-pointer" data-category="상세페이지" onclick="location.href='Product-page_wokr1.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/Product-page_wokr1_5.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
+            </div>
+            <h4 class="project-title mb-1 text-left">낭룩 상세페이지 작업</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Photoshop</p>
+            <p class="category-text text-left">모델보정, 인트로작업, 페이지작업</p>
+        </div>
+
+        <div class="project-card group cursor-pointer" data-category="상세페이지" onclick="location.href='Product-page_wokr2.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/Product-page_wokr3_3.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
+            </div>
+            <h4 class="project-title mb-1 text-left">쁘띠러브 상세페이지 작업</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Photoshop</p>
+            <p class="category-text text-left">모델보정, 인트로작업, 페이지작업</p>
+        </div>
+
+        <div class="project-card group cursor-pointer" data-category="UX/UI" onclick="location.href='project-uxui-1.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/uxui_work_2.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
+            </div>
+            <h4 class="project-title mb-1 text-left">마이크로콘 웹사이트 리뉴얼_메인페이지</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Figma, Gemini, Imweb</p>
+            <p class="category-text text-left">웹디자인 / UX·UI / 브랜드</p>
+        </div>
+
+        <div class="project-card group cursor-pointer" data-category="배너&카드뉴스" onclick="location.href='project-Banner-3.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/Banner_work3_1.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
+            </div>
+            <h4 class="project-title mb-1 text-left">서포터즈 모집 캠페인 콘텐츠 디자인</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Photoshop, Illustrator</p>
+            <p class="category-text text-left">배너 / 캠페인 / 프로모션콘텐츠</p>
+        </div>
+
+        <div class="project-card group cursor-pointer" data-category="영상" onclick="location.href='project-Video-2.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <div class="video-container">
+                     <iframe width="661" height="1175" src="https://www.youtube.com/embed/Z18qq8DInfM" title="video work 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
-                <h4 class="project-title mb-1 text-left">유튜브 댓글 이벤트 프로모션 콘텐츠 디자인</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Photoshop</p>
-                <p class="category-text text-left">배너, 프로모션</p>
+             <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">섹시 메탈힐 스타일링 영상 기획 및 제작</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> CapCut, Photoshop</p>
+            <p class="category-text text-left">콘텐츠 기획 / 영상 제작 / 광고 콘텐츠</p>
+        </div>
 
-
-
-
-            <div class="project-card group cursor-pointer" data-category="상세페이지" onclick="location.href='Product-page_wokr1.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/Product-page_wokr1_5.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
+        <div class="project-card group cursor-pointer" data-category="영상" onclick="location.href='project-Video-3.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <div class="video-container">
+                      <iframe width="661" height="1175" src="https://www.youtube.com/embed/Nk2hnUNTI8U" title="video_work_4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
-                <h4 class="project-title mb-1 text-left">낭룩 상세페이지 작업</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Photoshop</p>
-                <p class="category-text text-left">모델보정, 인트로작업, 페이지작업</p>
+             <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">시즌 앵클코디 콘텐츠 프로젝트</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> CapCut, Photoshop</p>
+            <p class="category-text text-left">콘텐츠 기획 / 영상 제작</p>
+        </div>
 
-            <div class="project-card group cursor-pointer" data-category="상세페이지" onclick="location.href='Product-page_wokr2.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/Product-page_wokr3_3.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
+        <div class="project-card group cursor-pointer" data-category="영상" onclick="location.href='project-Video-4.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <div class="video-container">
+                      <iframe width="661" height="1175" src="https://www.youtube.com/embed/mKb_vNF2DGY" title="video_work_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
-                <h4 class="project-title mb-1 text-left">쁘띠러브 상세페이지 작업</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Photoshop</p>
-                <p class="category-text text-left">모델보정, 인트로작업, 페이지작업</p>
+             <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
-
-            <div class="project-card group cursor-pointer" data-category="UX/UI" onclick="location.href='project-uxui-1.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/uxui_work_2.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">마이크로콘 웹사이트 리뉴얼_메인페이지</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Figma, Gemini, Imweb</p>
-                <p class="category-text text-left">웹디자인 / UX·UI / 브랜드</p>
-            </div>
-
-            <div class="project-card group cursor-pointer" data-category="배너&카드뉴스" onclick="location.href='project-Banner-3.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/Banner_work3_1.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">서포터즈 모집 캠페인 콘텐츠 디자인</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Photoshop, Illustrator</p>
-                <p class="category-text text-left">배너 / 캠페인 / 프로모션콘텐츠</p>
-            </div>
-
-
-            <div class="project-card group cursor-pointer" data-category="영상" onclick="location.href='project-Video-2.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <div class="video-container">
-                         <iframe width="661" height="1175" src="https://www.youtube.com/embed/Z18qq8DInfM" title="video work 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                 <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">섹시 메탈힐 스타일링 영상 기획 및 제작</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> CapCut, Photoshop</p>
-                <p class="category-text text-left">콘텐츠 기획 / 영상 제작 / 광고 콘텐츠</p>
-            </div>
-
-
-            <div class="project-card group cursor-pointer" data-category="영상" onclick="location.href='project-Video-3.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <div class="video-container">
-                          <iframe width="661" height="1175" src="https://www.youtube.com/embed/Nk2hnUNTI8U" title="video_work_4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-                    </div>
-                 <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">시즌 앵클코디 콘텐츠 프로젝트</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> CapCut, Photoshop</p>
-                <p class="category-text text-left">콘텐츠 기획 / 영상 제작</p>
-            </div>
-
-
-	<div class="project-card group cursor-pointer" data-category="영상" onclick="location.href='project-Video-4.html'">
-                <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <div class="video-container">
-                          <iframe width="661" height="1175" src="https://www.youtube.com/embed/mKb_vNF2DGY" title="video_work_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-                    </div>
-                 <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">어그부츠 추천 콘텐츠</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> CapCut, Photoshop</p>
-                <p class="category-text text-left">콘텐츠 기획 / 영상 제작</p>
-            </div>
-
-
-
+            <h4 class="project-title mb-1 text-left">어그부츠 추천 콘텐츠</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> CapCut, Photoshop</p>
+            <p class="category-text text-left">콘텐츠 기획 / 영상 제작</p>
+        </div>
 
         <div class="project-card group cursor-pointer" data-category="상세페이지" onclick="location.href='Product-page_wokr6.html'">
-                <div class="relative rounded-3xl overflow-hidden bg-gray-200 mb-6">
-                    <img src="images/Product-page_wokr8_0.jpg" class="w-full h-full object-cover">
-                    <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
-                </div>
-                <h4 class="project-title mb-1 text-left">규수방 베일리 매트리스 기획, 페이지 디자인</h4>
-                <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Figma, Photoshop</p>
-                <p class="category-text text-left">상세페이지작업, 상품기획</p>
+            <div class="relative rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/Product-page_wokr8_0.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
             </div>
+            <h4 class="project-title mb-1 text-left">규수방 베일리 매트리스 기획, 페이지 디자인</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Figma, Photoshop</p>
+            <p class="category-text text-left">상세페이지작업, 상품기획</p>
         </div>
-    </main>
+    </div>
+</main>
 
-    <footer class="bg-white pt-24 pb-12 px-6 md:px-12 border-t border-gray-100 w-full shrink-0">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 text-left">
-            <div class="max-w-sm">
-                <h4 class="font-bold text-lg mb-4 text-left">Hyunna Lee</h4>
-                <p class="text-sm text-gray-500 leading-relaxed text-left">
-                    디자인을 넘어, 더 나은 결과를 만들어갑니다.
-                </p>
-            </div>
-            <div class="flex gap-24">
-                <div class="text-left">
-                    <h5 class="text-[11px] font-bold text-gray-400 uppercase mb-6 tracking-[0.2em]">소셜</h5>
-                    <ul class="text-[13px] space-y-3 font-medium">
-                        <li><a href="https://www.instagram.com/hyun_na_2/" class="hover:underline flex items-center gap-2">인스타그램</a></li>
-                        <li><a href="mailto:gs9266123@gmail.com" class="hover:underline flex items-center gap-2">이메일</a></li>
-                    </ul>
-                </div>
+<footer class="border-t border-gray-100 pt-24 pb-12 px-6 md:px-12 bg-white w-full shrink-0">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 text-left">
+        <div class="max-w-sm">
+            <h4 class="font-bold text-xl mb-4">HYUNNA LEE</h4>
+            <p class="text-sm text-gray-500 leading-relaxed">
+                디자인을 넘어, 더 나은 결과를 만들어갑니다.
+            </p>
+        </div>
+        <div class="flex gap-24">
+            <div class="text-left">
+                <h5 class="text-[11px] font-bold text-gray-400 uppercase mb-6 tracking-[0.2em]">Contact</h5>
+                <ul class="text-[13px] space-y-3 font-medium">
+                    <li><a href="mailto:gs9266123@gmail.com" class="hover:underline">gs9266123@gmail.com</a></li>
+                </ul>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-24 text-[10px] text-gray-400 uppercase tracking-widest text-left">
-            © 2026 Hyunna Lee. All rights reserved.
-        </div>
-    </footer>
+    </div>
+    <div class="max-w-7xl mx-auto mt-24 text-[10px] text-gray-400 uppercase tracking-widest text-left">
+        © 2026 HYUNNA LEE. ALL RIGHTS RESERVED.
+    </div>
+</footer>
 
-    <script>
-        function toggleMobileMenu(event) {
-            if (event) { event.preventDefault(); event.stopPropagation(); }
-            const menu = document.getElementById('mobile-submenu');
-            if (menu.style.display === 'none' || menu.style.display === '') {
-                menu.style.display = 'flex';
-            } else {
-                menu.style.display = 'none';
+<script>
+    function toggleMobileMenu(event) {
+        if (event) { event.preventDefault(); event.stopPropagation(); }
+        const menu = document.getElementById('mobile-submenu');
+        if (menu.style.display === 'none' || menu.style.display === '') {
+            menu.style.display = 'flex';
+        } else {
+            menu.style.display = 'none';
+        }
+    }
+
+    document.addEventListener('click', function(event) {
+        const mobileMenu = document.getElementById('mobile-submenu');
+        if (mobileMenu && mobileMenu.style.display === 'flex') {
+            const isClickInsideMenu = event.target.closest('#mobile-submenu');
+            const isClickBtn = event.target.closest('#mobile-portfolio-btn');
+            if (!isClickInsideMenu && !isClickBtn) {
+                mobileMenu.style.display = 'none';
             }
         }
+    });
 
-        document.addEventListener('click', function(event) {
+    function goToPortfolio(category) {
+        if (category === '인물리터칭') {
+            window.location.href = 'project-retouching.html';
+            return;
+        }
+        const isPortfolioPage = document.getElementById('project-grid');
+        if (isPortfolioPage) {
+            filterProjects(category);
             const mobileMenu = document.getElementById('mobile-submenu');
-            if (mobileMenu && mobileMenu.style.display === 'flex') {
-                const isClickInsideMenu = event.target.closest('#mobile-submenu');
-                const isClickBtn = event.target.closest('#mobile-portfolio-btn');
-                if (!isClickInsideMenu && !isClickBtn) {
-                    mobileMenu.style.display = 'none';
-                }
+            if(mobileMenu) { mobileMenu.style.display = 'none'; }
+        } else {
+            window.location.href = 'portfolio.html?category=' + encodeURIComponent(category);
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        if (category && document.getElementById('project-grid')) {
+            filterProjects(category);
+        }
+    });
+
+    function filterProjects(category) {
+        if (category === '인물리터칭') {
+            window.location.href = 'project-retouching.html';
+            return;
+        }
+
+        const btns = document.querySelectorAll('.cat-btn');
+        btns.forEach(btn => btn.classList.remove('active'));
+        btns.forEach(btn => {
+            if(btn.textContent.trim() === category || (category === 'all' && btn.textContent.trim() === '전체')) {
+                btn.classList.add('active');
             }
         });
 
-        function goToPortfolio(category) {
-            if (category === '인물리터칭') {
-                window.location.href = 'project-retouching.html';
-                return;
-            }
-            const isPortfolioPage = document.getElementById('project-grid');
-            if (isPortfolioPage) {
-                filterProjects(category);
-                const mobileMenu = document.getElementById('mobile-submenu');
-                if(mobileMenu) { mobileMenu.style.display = 'none'; }
+        const cards = document.querySelectorAll('.project-card');
+        cards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            if (category === 'all' || cardCategory === category) {
+                card.style.display = 'block';
             } else {
-                window.location.href = 'portfolio.html?category=' + encodeURIComponent(category);
-            }
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const category = urlParams.get('category');
-            if (category && document.getElementById('project-grid')) {
-                filterProjects(category);
+                card.style.display = 'none';
             }
         });
-
-        function filterProjects(category) {
-            if (category === '인물리터칭') {
-                window.location.href = 'project-retouching.html';
-                return;
-            }
-
-            const btns = document.querySelectorAll('.cat-btn');
-            btns.forEach(btn => btn.classList.remove('active'));
-            btns.forEach(btn => {
-                if(btn.textContent.trim() === category || (category === 'all' && btn.textContent.trim() === '전체')) {
-                    btn.classList.add('active');
-                }
-            });
-
-            const cards = document.querySelectorAll('.project-card');
-            cards.forEach(card => {
-                const cardCategory = card.getAttribute('data-category');
-                if (category === 'all' || cardCategory === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
+    }
+</script>
 </body>
 </html>
