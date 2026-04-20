@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail | LEE HYUN NA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body { font-family: 'Pretendard', sans-serif; background-color: #f9f9f9; color: #1a1a1a; }
+        .tag { background: #eee; padding: 4px 12px; border-radius: 4px; font-size: 11px; color: #666; font-weight: 600; }
+        .content-media { width: 100%; border-radius: 24px; overflow: hidden; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        
+        /* 💡 줄바꿈을 위한 스타일: 엔터 친 대로 화면에 표시됩니다 */
+        .desc-text { 
+            white-space: pre-wrap; 
+            word-break: keep-all; 
+        }
+
+        /* 💡 모바일 글씨 밀림 및 겹침 방지 최적화 */
+        .project-title {
+            /* 모바일에서 글자가 너무 커서 밀리지 않도록 유연한 크기 적용 */
+            font-size: clamp(1.8rem, 6vw, 2.5rem); 
+            line-height: 1.2;
+            word-break: keep-all;
+        }
+
+        /* 모바일 정보 그리드 레이아웃 최적화 */
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr) !important; /* 5열에서 2열로 변경 */
+                gap: 2rem 1rem !important;
+            }
+        }
+
+        /* 덜컥거림 방지 */
+        html { overflow-y: scroll; }
+        body { min-height: 101vh; }
+    </style>
+</head>
+<body>
+
+    <nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto w-full">
+        <div class="font-bold text-lg uppercase cursor-pointer" onclick="location.href='index.html'">LEE HYUN NA</div>
+        <div class="space-x-8 text-xs text-gray-400 uppercase tracking-widest">
+            <a href="portfolio.html">Close Project ✕</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 md:py-20">
+        <p class="text-sm text-gray-600 font-bold mb-4 text-left">뷰티 프로모션 배너 디자인 </p>
+        
+        <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-12">
+            <h1 class="project-title font-bold text-left">세트 구매 유도_프로모션 배너 디자인</h1>
+            <div class="flex flex-wrap gap-2">
+                <span class="tag">Figma</span>
+                <span class="tag">Photoshop</span>
+            </div>
+        </div>
+
+        <h3 class="font-bold mb-8 border-b pb-4 text-left">프로젝트 정보</h3>
+        <div class="grid grid-cols-5 gap-4 mb-20 text-center info-grid">
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">역할</p>
+                <p class="text-xs font-bold text-gray-600"  style="font-size: 0.9em;">기획 및 카피</p>
+		<p class="text-xs font-bold text-gray-600"  style="font-size: 0.9em;">디자인 전 과정 수행</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">연도</p>
+                <p class="text-xs font-bold text-gray-600"  style="font-size: 0.9em;">2026</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">유형</p>
+                <p class="text-xs font-bold text-gray-600"  style="font-size: 0.9em;">개인프로젝트</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">분야</p>
+                <p class="text-xs font-bold text-gray-600"  style="font-size: 0.9em;">배너 디자인</p>
+            </div>
+            <div>
+                <p class="text-[17px] text-gray-900 font-extrabold mb-3">기여도</p>
+                <p class="text-xs font-bold text-gray-600"  style="font-size: 0.9em;">100%</p>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">01</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">프로젝트 개요</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">SNS 및 다양한 유입 채널에서 활용 가능한 프로모션 배너로,
+단품 구매보다 세트 구매를 유도하여 객단가를 높이는 것을 목표로 제작했습니다.
+여러 옵션을 한 화면에서 비교할 수 있도록 카드형 구조로 구성해
+사용자가 빠르게 가격과 혜택을 인지하고 선택할 수 있도록 설계했습니다.</p>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">02</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">프로젝트 완성</h4>
+                <div class="space-y-6">    
+                    <img src="images/Banner_work6_1.jpg" alt="결과물1" class="content-media">
+                </div>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">03</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">주요작업</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">1. 세트 구성에 따른 할인율 및 가격 구조 설계
+2. 옵션별 비교가 가능한 카드형 레이아웃 디자인
+3. 제품 컬러에 맞춘 톤앤매너 및 시각 요소 구성
+4. 오토레이아웃 및 컴포넌트를 활용한 템플릿 구조 설계
+5. 다양한 상품에 적용 가능한 재사용형 배너 시스템 구축
+</p>
+            </div>
+        </div>
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">04</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">결과물 특징</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed mb-10">1. 실제 촬영 없이 제작된 모델 이미지
+2. 카페 공간을 활용한 자연스러운 상황 연출
+3. 제품 착용 컷과 감성 이미지의 균형 있는 구성
+</p>
+            </div>
+        </div>
+
+
+        <div class="py-12 border-t flex items-start gap-6">
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">05</span>
+            <div class="flex-1 text-left">
+                <h4 class="font-bold mb-4">인사이트</h4>
+                <p class="desc-text text-gray-700 text-[15px] leading-relaxed">단순히 시각적으로 강조하는 배너가 아니라, 사용자가 자연스럽게 더 많은 수량을 선택하도록 유도하는 구조 설계가 중요하다는 것을 경험했습니다.
+
+특히 할인율과 가격의 관계, 옵션 간 비교 구조에 따라 구매 선택이 달라질 수 있다는 점을 고려해 디자인과 함께 전환 흐름을 함께 설계하는 방식으로 작업을 진행했습니다.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

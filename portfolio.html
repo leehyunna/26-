@@ -55,10 +55,10 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-full pt-2 hidden group-hover:flex flex-col items-center z-50 w-max">
                 <div class="bg-white border border-gray-100 shadow-lg rounded-xl py-3 px-5 flex flex-col gap-3 w-full">
                     <button onclick="goToPortfolio('all')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">전체보기</button>
-                    <button onclick="goToPortfolio('브랜딩')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">브랜딩</button>
-                    <button onclick="goToPortfolio('AI비주얼')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">AI비주얼</button>
                     <button onclick="goToPortfolio('상세페이지')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">상세페이지</button>
                     <button onclick="goToPortfolio('배너&카드뉴스')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">배너&카드뉴스</button>
+                    <button onclick="goToPortfolio('AI비주얼')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">AI비주얼</button>
+                    <button onclick="goToPortfolio('브랜딩')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">브랜딩</button>
                     <button onclick="goToPortfolio('로고디자인')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">로고디자인</button>
                     <button onclick="location.href='project-retouching.html'" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">인물 리터칭</button>
                     <button onclick="goToPortfolio('영상')" class="text-[13px] text-gray-500 hover:text-black transition-colors w-full text-center">영상</button>
@@ -83,10 +83,10 @@
 
 <div id="mobile-submenu" style="display: none;" class="md:hidden flex justify-start space-x-5 py-3 bg-gray-50 border-b border-gray-100 overflow-x-auto whitespace-nowrap px-6 mb-8 transition-opacity">
     <button onclick="goToPortfolio('all')" class="text-xs text-gray-500 hover:text-black shrink-0">전체보기</button>
-    <button onclick="goToPortfolio('브랜딩')" class="text-xs text-gray-500 hover:text-black shrink-0">브랜딩</button>
-    <button onclick="goToPortfolio('AI비주얼')" class="text-xs text-gray-500 hover:text-black shrink-0">AI비주얼</button>
     <button onclick="goToPortfolio('상세페이지')" class="text-xs text-gray-500 hover:text-black shrink-0">상세페이지</button>
     <button onclick="goToPortfolio('배너&카드뉴스')" class="text-xs text-gray-500 hover:text-black shrink-0">배너&카드뉴스</button>
+    <button onclick="goToPortfolio('AI비주얼')" class="text-xs text-gray-500 hover:text-black shrink-0">AI비주얼</button>
+    <button onclick="goToPortfolio('브랜딩')" class="text-xs text-gray-500 hover:text-black shrink-0">브랜딩</button>
     <button onclick="goToPortfolio('로고디자인')" class="text-xs text-gray-500 hover:text-black shrink-0">로고디자인</button>
     <button onclick="location.href='project-retouching.html'" class="text-xs text-gray-500 hover:text-black shrink-0">인물 리터칭</button>
     <button onclick="goToPortfolio('영상')" class="text-xs text-gray-500 hover:text-black shrink-0">영상</button>
@@ -100,10 +100,10 @@
 
     <div class="flex flex-wrap justify-start md:justify-center gap-3 mb-16" id="category-container">
         <button class="cat-btn active" onclick="filterProjects('all')">전체</button>
-        <button class="cat-btn" onclick="filterProjects('브랜딩')">브랜딩</button>
-        <button class="cat-btn" onclick="filterProjects('AI비주얼')">AI비주얼</button>
         <button class="cat-btn" onclick="filterProjects('상세페이지')">상세페이지</button>
         <button class="cat-btn" onclick="filterProjects('배너&카드뉴스')">배너&카드뉴스</button>
+        <button class="cat-btn" onclick="filterProjects('AI비주얼')">AI비주얼</button>
+        <button class="cat-btn" onclick="filterProjects('브랜딩')">브랜딩</button>
         <button class="cat-btn" onclick="filterProjects('로고디자인')">로고디자인</button>
         <button class="cat-btn" onclick="location.href='project-retouching.html'">인물 리터칭</button>
         <button class="cat-btn" onclick="filterProjects('영상')">영상</button>
@@ -204,6 +204,17 @@
             <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span> Photoshop, Figma</p>
             <p class="category-text text-left">광고배너, 비주얼 콘텐츠</p>
         </div>
+
+        <div class="project-card group cursor-pointer" data-category="배너&카드뉴스" onclick="location.href='project-Banner-6.html'">
+            <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
+                <img src="images/Banner_work6_0.jpg" class="w-full h-full object-cover">
+                <div class="overlay"><span class="view-btn">프로젝트 보기</span></div>
+            </div>
+            <h4 class="project-title mb-1 text-left">세트 구매 유도_프로모션 배너 디자인</h4>
+            <p class="tool-text text-left"><span class="font-bold text-gray-800">사용툴</span>Figma, Photoshop</p>
+            <p class="category-text text-left">뷰티 프로모션 배너 디자인</p>
+        </div>
+
 
         <div class="project-card group cursor-pointer" data-category="배너&카드뉴스" onclick="location.href='project-Banner-5.html'">
             <div class="relative aspect-square rounded-3xl overflow-hidden bg-gray-200 mb-6">
