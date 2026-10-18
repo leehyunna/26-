@@ -1,0 +1,582 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail | LEE HYUN NA</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-y: scroll;
+        }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #f9f9f9;
+            color: #1a1a1a;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        /* ==================================
+           공통 레이아웃
+        ================================== */
+
+        /* 본문 영역 : 최대 1200px */
+        .main-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+
+        /* 이미지 영역 : 최대 1440px */
+        .wide-container {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+
+        /* ==================================
+           프로젝트 타이틀
+        ================================== */
+
+        .project-title {
+            font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+            line-height: 1.3;
+            letter-spacing: -0.035em;
+            word-break: keep-all;
+        }
+
+        .tag {
+            background: #eee;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            color: #666;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .desc-text {
+            white-space: pre-wrap;
+            word-break: keep-all;
+        }
+
+        /* ==================================
+           프로젝트 정보
+        ================================== */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .info-grid > div {
+            min-width: 0;
+        }
+
+        .info-title {
+            font-size: 17px;
+            font-weight: 800;
+            margin-bottom: 14px;
+            color: #111;
+        }
+
+        .info-desc {
+            font-size: 14px;
+            font-weight: 600;
+            color: #666;
+            line-height: 1.8;
+            word-break: keep-all;
+        }
+
+        /* ==================================
+           공통 섹션
+        ================================== */
+
+        .project-section {
+            padding-top: 56px;
+            padding-bottom: 56px;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            min-width: 24px;
+            height: 24px;
+            padding: 0 6px;
+            background: #111;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            border-radius: 50px;
+        }
+
+        .section-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .section-description {
+            font-size: 15px;
+            line-height: 1.9;
+            color: #555;
+        }
+
+        /* ==================================
+           이미지 갤러리
+        ================================== */
+
+        .gallery-heading {
+            margin-bottom: 36px;
+        }
+
+        .project-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .content-media {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.035);
+        }
+
+        /* ==================================
+           주요작업
+        ================================== */
+
+        .work-description {
+            font-size: 15px;
+            line-height: 1.9;
+            color: #555;
+            white-space: pre-wrap;
+            word-break: keep-all;
+        }
+
+        .work-description b {
+            color: #222;
+            font-weight: 700;
+        }
+
+        /* ==================================
+           태블릿
+        ================================== */
+
+        @media (max-width: 1024px) {
+
+            .main-container,
+            .wide-container {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .info-grid {
+                gap: 16px;
+            }
+
+            .info-desc {
+                font-size: 13px;
+            }
+
+        }
+
+        /* ==================================
+           모바일
+        ================================== */
+
+        @media (max-width: 768px) {
+
+            .main-container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .wide-container {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .project-title {
+                font-size: clamp(1.8rem, 6vw, 2.2rem);
+            }
+
+            .info-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 30px 16px;
+            }
+
+            .info-title {
+                font-size: 15px;
+            }
+
+            .info-desc {
+                font-size: 13px;
+            }
+
+            .project-section {
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+
+            .section-heading {
+                gap: 16px;
+            }
+
+            .section-description,
+            .work-description {
+                font-size: 14px;
+                line-height: 1.85;
+            }
+
+            .gallery-heading {
+                margin-bottom: 24px;
+            }
+
+            .project-gallery {
+                gap: 20px;
+            }
+
+            .content-media {
+                border-radius: 12px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================================
+         NAVIGATION
+    ================================== -->
+
+    <nav class="flex justify-between items-center px-6 py-8 md:px-12 max-w-7xl mx-auto w-full">
+
+        <div
+            class="font-bold text-lg uppercase cursor-pointer"
+            onclick="location.href='index.html'">
+            LEE HYUN NA
+        </div>
+
+        <div class="space-x-8 text-xs text-gray-400 uppercase tracking-widest">
+            <a href="portfolio.html">Close Project ✕</a>
+        </div>
+
+    </nav>
+
+
+    <!-- ==================================
+         프로젝트 타이틀 및 정보
+         최대 너비 1200px
+    ================================== -->
+
+    <main>
+
+        <div class="main-container pt-12 md:pt-20">
+
+            <!-- 카테고리 -->
+            <p class="text-sm text-gray-600 font-bold mb-5 text-left">
+                SNS 콘텐츠 기획 및 디자인, AI 이미지 제작, 인스타그램 피드 디자인
+            </p>
+
+            <!-- 프로젝트 제목 -->
+            <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-8 mb-16">
+
+                <h1 class="project-title font-bold text-left">
+                    브랜드별 SNS 콘텐츠 기획 및 <br>
+                    AI 비주얼 디자인
+                </h1>
+
+                <!-- 사용 툴 -->
+                <div class="flex flex-wrap gap-2">
+                    <span class="tag">Figma</span>
+                    <span class="tag">Freepik</span>
+                    <span class="tag">ChatGPT</span>
+                    <span class="tag">Gemini</span>
+                    <span class="tag">Photoshop</span>
+                </div>
+
+            </div>
+
+
+            <!-- ==================================
+                 프로젝트 정보
+            ================================== -->
+
+            <h3 class="font-bold mb-8 border-b pb-4 text-left">
+                프로젝트 정보
+            </h3>
+
+            <div class="info-grid mb-24 text-center">
+
+                <!-- 역할 -->
+                <div>
+                    <p class="info-title">역할</p>
+
+                    <p class="info-desc">
+                        SNS 콘텐츠 기획 및 디자인<br>
+                        브랜드별 톤앤매너 설계<br>
+                        AI 이미지 생성 및 보정<br>
+                        인스타그램 피드 구성
+                    </p>
+                </div>
+
+                <!-- 연도 -->
+                <div>
+                    <p class="info-title">연도</p>
+                    <p class="info-desc">2026</p>
+                </div>
+
+                <!-- 유형 -->
+                <div>
+                    <p class="info-title">유형</p>
+                    <p class="info-desc">기업 실무 프로젝트</p>
+                </div>
+
+                <!-- 분야 -->
+                <div>
+                    <p class="info-title">분야</p>
+
+                    <p class="info-desc">
+                        SNS 콘텐츠 디자인,<br>
+                        AI 비주얼 제작,<br>
+                        브랜드 콘텐츠
+                    </p>
+                </div>
+
+                <!-- 기여도 -->
+                <div>
+                    <p class="info-title">기여도</p>
+                    <p class="info-desc">100%</p>
+                </div>
+
+            </div>
+
+
+            <!-- ==================================
+                 01 프로젝트 개요
+            ================================== -->
+
+            <section class="project-section">
+
+                <div class="section-heading">
+
+                    <span class="section-number">01</span>
+
+                    <div class="section-content">
+
+                        <h4 class="section-title">
+                            프로젝트 개요
+                        </h4>
+
+                        <p class="desc-text section-description">CUSKIN의 Vitamin U, CLEAN-UP DERMA, CLEANUP, Dr.Solution 브랜드를 대상으로 SNS 콘텐츠를 기획하고 제작한 프로젝트입니다.
+
+각 브랜드의 아이덴티티와 제품별 특성을 기반으로 비주얼 콘셉트를 설정하고, AI를 활용한 제품 연출 이미지 제작부터 톤앤매너 설계, 최종 인스타그램 피드 디자인까지 진행했습니다.
+
+3분할·9분할·12분할 등 다양한 피드 구성을 활용하여 브랜드별 일관성을 유지하면서도 제품의 기능, 제형, 시즌 콘셉트에 맞는 차별화된 SNS 비주얼을 구현했습니다.</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- ==================================
+             02 프로젝트 완성
+             제목 1200px / 이미지 1440px
+        ================================== -->
+
+        <section class="py-12">
+
+            <!-- 섹션 제목은 1200px 정렬 -->
+            <div class="main-container">
+
+                <div class="border-t pt-12">
+
+                    <div class="section-heading gallery-heading">
+
+                        <span class="section-number">02</span>
+
+                        <div class="section-content">
+                            <h4 class="section-title mb-0">
+                                프로젝트 완성
+                            </h4>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 이미지만 1440px 확장 -->
+            <div class="wide-container">
+
+                <div class="project-gallery">
+
+                    <!-- PART 1 -->
+                    <img
+                        src="images/CUSKIN SNS CONTENT DESIGN_Part1.jpg"
+                        alt="CUSKIN SNS 콘텐츠 디자인 Part 1"
+                        class="content-media">
+
+                    <!-- PART 2 -->
+                    <img
+                        src="images/CUSKIN SNS CONTENT DESIGN_Part2.jpg"
+                        alt="CUSKIN SNS 콘텐츠 디자인 Part 2"
+                        class="content-media"
+                        loading="lazy">
+
+                    <!-- PART 3 -->
+                    <img
+                        src="images/CUSKIN SNS CONTENT DESIGN_Part3.jpg"
+                        alt="CUSKIN SNS 콘텐츠 디자인 Part 3"
+                        class="content-media"
+                        loading="lazy">
+
+                    <!-- PART 3-1 -->
+                    <img
+                        src="images/CUSKIN SNS CONTENT DESIGN_Part3_1.jpg"
+                        alt="CUSKIN SNS 콘텐츠 디자인 Part 3-1"
+                        class="content-media"
+                        loading="lazy">
+
+                    <!-- PART 4 -->
+                    <img
+                        src="images/CUSKIN SNS CONTENT DESIGN_Part4.jpg"
+                        alt="CUSKIN SNS 콘텐츠 디자인 Part 4"
+                        class="content-media"
+                        loading="lazy">
+
+                    <!-- PART 4-1 -->
+                    <img
+                        src="images/CUSKIN SNS CONTENT DESIGN_Part4_1.jpg"
+                        alt="CUSKIN SNS 콘텐츠 디자인 Part 4-1"
+                        class="content-media"
+                        loading="lazy">
+
+                    <!-- PART 5 -->
+                    <img
+                        src="images/CUSKIN SNS CONTENT DESIGN_Part5.jpg"
+                        alt="CUSKIN SNS 콘텐츠 디자인 Part 5"
+                        class="content-media"
+                        loading="lazy">
+
+                    <!-- PART 5-1 -->
+                    <img
+                        src="images/CUSKIN SNS CONTENT DESIGN_Part5_1.jpg"
+                        alt="CUSKIN SNS 콘텐츠 디자인 Part 5-1"
+                        class="content-media"
+                        loading="lazy">
+
+                    <!-- PART 6 -->
+                    <img
+                        src="images/CUSKIN SNS CONTENT DESIGN_Part6.jpg"
+                        alt="CUSKIN SNS 콘텐츠 디자인 Part 6"
+                        class="content-media"
+                        loading="lazy">
+
+                    <!-- PART 6-1 -->
+                    <img
+                        src="images/CUSKIN SNS CONTENT DESIGN_Part6_1.jpg"
+                        alt="CUSKIN SNS 콘텐츠 디자인 Part 6-1"
+                        class="content-media"
+                        loading="lazy">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================
+             03 주요작업
+             최대 너비 1200px
+        ================================== -->
+
+        <section class="main-container">
+
+            <div class="project-section">
+
+                <div class="section-heading">
+
+                    <span class="section-number">03</span>
+
+                    <div class="section-content">
+
+                        <h4 class="section-title">
+                            주요작업
+                        </h4>
+
+                        <p class="work-description"><b>01. 브랜드 및 제품 분석</b>
+브랜드별 아이덴티티와 제품의 디자인, 컬러, 제형 및 주요 특징을 분석하고 SNS 콘텐츠의 비주얼 방향을 설정했습니다.
+
+<b>02. 콘텐츠 콘셉트 기획</b>
+제품 특성과 시즌, 사용 상황에 맞는 레퍼런스를 조사하고 브랜드별 차별화된 연출 콘셉트와 무드보드를 구성했습니다.
+
+<b>03. AI 이미지 제작 및 디테일 보정</b>
+AI를 활용해 제품 연출컷, 모델컷, 제형 이미지를 제작하고 제품 형태와 색상, 구도 및 디테일을 보정하여 일관된 비주얼을 구현했습니다.
+
+<b>04. SNS 콘텐츠 최종 디자인</b>
+제작된 이미지를 선별하고 텍스트와 그래픽 요소를 편집하여 브랜드별 SNS 콘텐츠를 완성했습니다. 개별 게시물의 완성도와 전체 피드의 연결감을 함께 고려했습니다.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================================
+         FOOTER
+    ================================== -->
+
+    <footer class="bg-white pt-24 pb-12 px-6 md:px-12 border-t border-gray-100 w-full shrink-0">
+    </footer>
+
+</body>
+</html>
